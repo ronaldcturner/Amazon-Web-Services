@@ -1,0 +1,42 @@
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC-classic-classic> eb init --interactive
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+.
+.
+
+(default is 3): 3
+
+Select an application to use
+1) Marcus-APP
+2) [ Create new Application ]
+(default is 1): 1
+
+======================================
+In my case I used a sample python application, it might be different in your case
+======================================
+
+It appears you are using Python. Is this correct?
+(Y/n): y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 2.6
+6) Python 3.4 (Preconfigured - Docker)
+(default is 1):
+Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+
+If you do not want to allow SSH access to instance, then you can choose 'No'.
+Do you want to set up SSH for your instances?
+(Y/n): y
+
+Select a keypair.
+1) Choose-any-of-the-existing-key
+2) [ Create new KeyPair ]
+(default is 2): 1
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC-classic>

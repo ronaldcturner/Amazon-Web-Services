@@ -1,0 +1,9 @@
+Get the VPC ID from the VPC Console: https://us-west-2.console.aws.amazon.com/vpc/home?region=us-west-2#vpcs: 
+Value: vpc-966806f1
+
+Go here for Subnets (and the VPC Subnet): https://us-west-2.console.aws.amazon.com/vpc/home?region=us-west-2#subnets:
+subnet-9aea6bfd
+subnet-2b924962
+subnet-63b58e3b
+
+Proper Create script: "eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets subnet-2b924962,subnet-9aea6bfd --vpc.publicip"

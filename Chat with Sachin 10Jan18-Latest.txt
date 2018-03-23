@@ -1,0 +1,385 @@
+(02:18:15) Sachin A. said to you:
+Sure.. :)
+
+(02:19:06) Sachin A. said to you:
+Would you like to create a completely new application ?
+
+(02:19:24) Sachin A. said to you:
+or use the existing application
+
+(02:20:28) You said to Sachin A.:
+Yes, like we did before. So I (think) I want to kill/delete "Marcus-APP" (the green box) which is an environment? (I'm getting punchy. I'll follow you.)
+
+(02:22:42) Sachin A. said to you:
+Bit confused, what I understand is that you want to have new environments under same application?
+
+(02:22:59) Sachin A. said to you:
+and delete all those green boxes (environments) ?
+
+(02:23:38) You said to Sachin A.:
+No, just the "Marcus-APP" green box
+
+(02:23:40) Sachin A. said to you:
+ahh ok..
+
+(02:24:09) Sachin A. said to you:
+Shall we proceed with the deletion of this one ?
+
+(02:24:23) You said to Sachin A.:
+yes
+
+(02:26:53) You said to Sachin A.:
+Let's call the new one "ClinicalTrials" (now that the old ClinicalTrials is long gone).
+
+(02:27:08) Sachin A. said to you:
+ok..
+
+(02:27:37) Sachin A. said to you:
+before we proceed.. create a clean new directory in your local machine
+
+(02:29:11) Sachin A. said to you:
+cool.. now copy the working code to this directory
+
+(02:29:45) You said to Sachin A.:
+I'll unzip the stored "Gold Standard" that we created
+
+(02:29:54) Sachin A. said to you:
+ok
+
+(02:30:48) You said to Sachin A.:
+Wait. I need to add your .ebextensions
+
+(02:31:02) Sachin A. said to you:
+I was about to say that :)
+
+(02:32:20) Sachin A. said to you:
+Do you want to add any commands to change the permissions of your app directory on remote machine
+
+(02:33:06) You said to Sachin A.:
+YES!!! and if this were a Linux machine, the permissions woujld probably get uploaded intact. But not with Wiindows.
+
+(02:33:31) Sachin A. said to you:
+ok..
+
+(02:34:24) Sachin A. said to you:
+Are you planning to have C of clinical and T of trial to be uppercase ?
+
+(02:34:37) Sachin A. said to you:
+I would recommend to have everything in lowercase
+
+(02:35:06) You said to Sachin A.:
+no. So I'll change. Good practice!
+
+(02:35:17) Sachin A. said to you:
+cool!
+
+(02:35:34) You said to Sachin A.:
+It's saved.
+
+(02:35:46) Sachin A. said to you:
+do you need that first entry ?
+
+(02:35:58) You said to Sachin A.:
+No, and I'll delete it.
+
+(02:36:32) Sachin A. said to you:
+looks good to me :)
+
+(02:37:33) Sachin A. said to you:
+shall we add those linux commands to modify permissions ?
+
+(02:38:21) You said to Sachin A.:
+I would love to. I have them right here.... copy-paste.
+
+(02:38:39) Sachin A. said to you:
+ok..
+
+(02:38:46) Sachin A. said to you:
+go to ebextensions directory
+
+(02:39:43) Sachin A. said to you:
+For your convenience I had added it before.. just check if that the correct path :)
+
+(02:40:56) You said to Sachin A.:
+Looks good to me. Shall I un-comment?
+
+(02:41:06) Sachin A. said to you:
+cool!
+
+(02:41:19) Sachin A. said to you:
+ok.. pls un-comment them
+
+(02:41:48) You said to Sachin A.:
+Saved.
+
+(02:41:49) Sachin A. said to you:
+ok
+
+(02:42:27) You said to Sachin A.:
+clock time matches
+
+(02:42:40) Sachin A. said to you:
+I think we are good to launch the environment :)
+
+(02:42:56) Sachin A. said to you:
+do 
+eb init
+
+(02:43:35) You said to Sachin A.:
+Now guide me carefully with names and defaults. THIS is the the script that I really want to save.
+
+(02:43:48) Sachin A. said to you:
+Ok..
+
+(02:44:01) Sachin A. said to you:
+Can you pls increase the font size a bit
+
+(02:44:38) Sachin A. said to you:
+thanks...
+
+(02:44:48) Sachin A. said to you:
+3
+
+(02:45:11) Sachin A. said to you:
+Ron one quick question..
+
+(02:45:48) Sachin A. said to you:
+May I know why you picked us-west-2 as your region ?
+
+(02:45:57) Sachin A. said to you:
+is it the nearest region ?
+
+(02:46:28) You said to Sachin A.:
+Yes. nearest. But I'm not particular
+
+(02:47:07) Sachin A. said to you:
+ok.. just wanted to ask you as a side note..
+
+(02:47:17) Sachin A. said to you:
+we are good to proceed furhter :)
+
+(02:47:44) Sachin A. said to you:
+1
+
+(02:48:41) Sachin A. said to you:
+can you show me the files under that directory
+
+(02:48:50) Sachin A. said to you:
+via cmd line
+
+(02:49:54) Sachin A. said to you:
+ok.. it already has a ".elasticbeanstalk" folder which usually holds the information about the local machine
+
+(02:50:31) Sachin A. said to you:
+Usually this ".elasticbeanstalk" is created after initialization (eb init)
+
+(02:50:42) Sachin A. said to you:
+can you show me the contents of it.
+
+(02:51:09) Sachin A. said to you:
+(I think it's from the previous zip of REV3)
+
+(02:51:21) Sachin A. said to you:
+you can delete that file..
+
+(02:51:25) You said to Sachin A.:
+Yes it is. So....
+
+(02:51:57) You said to Sachin A.:
+gone
+
+(02:52:04) Sachin A. said to you:
+ok..
+
+(02:52:31) Sachin A. said to you:
+try one more time
+eb init --interactive
+
+(02:53:52) Sachin A. said to you:
+FYI: Difference between "eb init" and "eb init --interactive"
+with interactive switch it has the capability to modify the older config.yml file (the file which you deleted few moments ago)
+
+(02:54:21) Sachin A. said to you:
+1
+
+(02:54:30) Sachin A. said to you:
+y
+
+(02:54:38) Sachin A. said to you:
+1
+
+(02:54:47) Sachin A. said to you:
+y
+
+(02:55:00) Sachin A. said to you:
+ok..
+
+(02:55:28) Sachin A. said to you:
+just try to do "eb list" (which should as empty)
+
+(02:56:08) You said to Sachin A.:
+... which is proper?
+
+(02:56:36) Sachin A. said to you:
+sorry my bad.. it is correct..
+
+(02:56:48) Sachin A. said to you:
+since we have one running env.. it will show that..
+
+(02:57:23) Sachin A. said to you:
+now we will create with "eb create" command
+let me pull the complete command
+
+(02:58:30) Sachin A. said to you:
+eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets
+ subnet-2b924962,subnet-9aea6bfd --vpc.publicip
+
+(02:58:43) Sachin A. said to you:
+copy it to notepad first
+
+(02:59:31) Sachin A. said to you:
+looks good..
+
+(03:00:09) Sachin A. said to you:
+what name would you like to give?
+
+(03:00:38) Sachin A. said to you:
+Yes..
+
+(03:00:47) You said to Sachin A.:
+This should match the string in "settings.py" right? So "clinicaltrials"
+
+(03:01:36) Sachin A. said to you:
+just to double check.. can you pls show me the settings.py file once..
+
+(03:01:54) Sachin A. said to you:
+I would like to see the complete FQDN..
+
+(03:02:46) Sachin A. said to you:
+ok.. just for reference, can you just copy paste that name in the chat window
+
+(03:03:06) You said to Sachin A.:
+clinicaltrials.us-west-2.elasticbeanstalk.com
+
+(03:03:11) Sachin A. said to you:
+thanks
+
+(03:03:41) Sachin A. said to you:
+you can continue with cmd line
+
+(03:04:22) You said to Sachin A.:
+which will get pre-pended during create?
+
+(03:04:26) Sachin A. said to you:
+looks good..
+
+(03:04:42) Sachin A. said to you:
+just hit enter
+
+(03:05:01) Sachin A. said to you:
+2
+
+(03:06:10) You said to Sachin A.:
+I see. It's my choice of DNS CNAME that = the prefix of the FQDN.
+
+(03:06:46) Sachin A. said to you:
+Yep..
+
+(03:08:22) You said to Sachin A.:
+BTW, that debug screen that pops up in the application will of course be turned off for production. But if this is successful we'll see the application's error screen (which is proper)
+
+(03:09:14) You said to Sachin A.:
+So eb open should elicit that error page (and hopefully NOT the ALLOWED_HOSTS error!
+
+(03:10:04) Sachin A. said to you:
+ahh ok.. Even I was assuming something on similar lines, 
+Since the application was in early stage, debug mode is enabled.
+
+(03:11:29) You said to Sachin A.:
+SUCCESS!!!!!!!!!!!!
+
+(03:11:44) Sachin A. said to you:
+Cool!
+
+(03:12:11) Sachin A. said to you:
+it's opening old app REV3
+
+(03:12:14) You said to Sachin A.:
+Hold it! wrong environment
+
+(03:12:18) Sachin A. said to you:
+eb list
+
+(03:12:28) Sachin A. said to you:
+eb use clinicaltrials
+
+(03:14:14) You said to Sachin A.:
+THERE. The stress test: creating thousands of lines of XACML (access security) code.
+
+(03:14:34) Sachin A. said to you:
+So.. is it working as expected ?
+
+(03:15:02) You said to Sachin A.:
+Yes. Totally as expected. And I see that the Web consoles are now catching up.
+
+(03:15:24) Sachin A. said to you:
+ok
+
+(03:16:25) Sachin A. said to you:
+One important point: 
+before executing "eb deploy" always double check the active env by using command "eb list"
+
+(03:17:28) You said to Sachin A.:
+VERY helpful reminder. I had already made that blunder prior to calling you. And now I've got the whole session captured.
+
+(03:18:28) Sachin A. said to you:
+In near future, would you be using multiple systems (local machines) to deploy code ?
+
+(03:19:24) Sachin A. said to you:
+In case yes,,.. I just wanted to give you heads up..
+
+(03:19:25) You said to Sachin A.:
+Yes. Maybe. so....? And likely both Linux and Windows
+
+(03:20:24) Sachin A. said to you:
+on the new machine.. 
+1. browse to the directory which has code 
+2. initialize (eb init)
+3. use eb list to double check the active env
+4. eb deploy
+
+(03:20:56) You said to Sachin A.:
+... but I want to return to using our secure GitHub as the SINGLE source for uploads.
+
+(03:21:02) Sachin A. said to you:
+It's same.. but you it requires initialization..
+
+(03:21:07) Sachin A. said to you:
+ok
+
+(03:21:16) You said to Sachin A.:
+thanks for that checklist.
+
+(03:21:25) Sachin A. said to you:
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-cli-git.html
+
+(03:22:21) Sachin A. said to you:
+may be you can play around with this feature, probably on some other directory or even machine..
+
+(03:22:31) You said to Sachin A.:
+Thanks. Much easier than digging up the command scripts from a month ago.
+
+(03:22:41) Sachin A. said to you:
+Once you feel more comfortable  you can start using it..
+
+(03:23:15) You said to Sachin A.:
+Got it bookmarked.
+
+(03:23:34) Sachin A. said to you:
+Cool!
+
+(03:24:04) Sachin A. said to you:
+Is there anything else which I can assist you..
+
+(03:25:47) You said to Sachin A.:
+No. And I think that finally I/we can close this case. I recall that we can return if need be. But nothing pertinent that I can see. And again, every piece of this dialogue makes it easier for us to work with our customers (an important meeting coming up tomorrow, in fact). So you've helped us on many fronts!

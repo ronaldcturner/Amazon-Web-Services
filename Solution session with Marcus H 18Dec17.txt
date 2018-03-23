@@ -1,0 +1,201 @@
+
+Live Chat (Case ID - 4690048681)
+End Chat
+You are now connected to Marcus from AWS. Please type your question below.
+Me:Regarding case 4690048681
+Marcus:Hello, my name is Marcus. I'm here to help you today. May I have your name?
+Me:Ron Turner (Company XpressRules LLC)
+Marcus:Hello Ron, please allow me a few moments to pull up and review your case.
+Me:It's a long thread. Take your time. I'm in no hurry.
+Marcus:I'm getting there. Quite a bit to read through.
+Me:I realize that. I'll let you take a breath and decide just how to go at this systematically.
+Marcus:Ok
+Let's get on a screen share session and take a look at what is going on. https://screenshare.amazonaws.com/?ak=a...(See full link)
+Me:going to the link now....
+You should be viewing my screen now. Lots to clear out of the way, as you directly.
+Marcus:Sure, give me just a moment.
+Let's take a look at your application directory on your local machine.The file with the path issue?
+Me:That is ClinicalTrials_AWS (now in view)
+Most likely the django.conf contents (now in view)
+Marcus:Can we look at the ebdjango directory
+So the root of your application directory is ClinicalTrials_AWS correct?
+Me:Locally, that is true. In local mode I successfully launch (python manage.py runserver) the app from this directory.
+Marcus:Ok
+Now let's look at the .ebextensions directory
+Me:here's /.ebextextensions + the contents of django.conf (local)
+Marcus:Okay, great. Let me get our EB environment pulled up on my side. Just a moment.
+Right onLet's go to the root of the application directory on your instance.
+Me:And I'm already SSH'd into my remote EB environment as well, if that helps.
+Marcus:What is your environment name and region it was created in?
+Me:here's the current .yml file under my local .elasticbeanstalk (auto-generated during the initiate step. I take that to be authoritative.
+Remote region appears as /opt/python/current/app/Can you my SSH screen?
+Marcus:The region is actually us-west-2 I believe from your config file.
+Let's look at the following directory/opt/python/current/appNow show me your local application directory again please.
+Me:ebdjango locally. NO ebdjango remotely,
+Marcus:We need to revisit how to get the application set appropriately.
+What all files and directories does your application need to function?
+Me:Files and directories themselves are all contained within the root directory structure.
+Marcus:So if I understand correctly you want all of the files and folders in the following ClinicalTrials_AWS directory to be a part of your application?
+Me:Dependencies for Python are all included in the requirements file. But where did THAT go? I wasn't aware that I lost that somewhere. This is major? In addition, the Python code does a live run_process (not a SSH) call to Java, which is what was impossible at RedHat. To finish this box, I want to see what I did to lose the requirements file.
+Yes, just for sanity's sake, I've left all of this demo's files and folders in the ClinicalTrials_AWS directory. That worked perfectly in RedHat's Openshift PaaS and I don't want to start janitorial work an upset things yet.
+Marcus:Walk me through the process you use to update the environment.
+Me:The big mystery to me is why doesn't ebdjango show up on the remote server (may be irrelevant at the moment)?
+I'm going to bring up the running CLI capture of the session that built the environment you're now seeing. (This was a clean from-scratch build, not just an update.) Bear in mind that I'm new to AWS and still very shaky. I'll bring up the log now (Word file)
+Marcus:No worries. I'm still learning everyday myself.
+Me:OK, this is long (6 pages), so I'll scroll for you as you direct.
+Marcus:scroll down some
+moreok no biggie
+Me:I took the default for CodeCommit (n). But then we see the warning later about uncommitted (files?) Is that a factor?
+Marcus:nope
+you're goodLet's review the ssh session one more time.It's not getting the directories copied over.We need to review the ssh session in real time.
+Me:Here (in the Word doc) is the capture of the actual SSH session, showing offending WSGIScriptAlias (yellow box)
+OK back to SSH live
+Marcus:ls -al
+clearls -al
+Me:verified that we're live. I'll be your fingers
+Marcus:eb deploy
+not yetexitexit firstor open a new command promptyou can keep the session open, we just need the command prompt.You're on a windows machine right?
+Me:Howzat? Command prompt (in the /app directory).
+Marcus:start --> run --> cmd
+dircd to the application directory then type 'dir'.
+Me:Now in the Windows CLI, going to the app dir
+Marcus:dir
+All of these files and directories are part of your application right?
+Me:This is the dir (renamed only) from which I run it locally. And I ASSUMED that the same directory got uploaded at RedHat on their PaaS.
+All messiness aside, yes (for now and for many months), all of these files and directories are part of the application.
+Marcus:Just a suggestion, but I would get a definite list of what directories and files you need to have for it to function once we get this resolved.
+Me:VERY fishy (I'd say) that ebdjango does not appear on the remote end.
+Marcus:So let's to the following actions now.
+from your command prompt type the following.eb deploy
+Me:Now doing the live deploy. Hope you can see.
+Marcus:ctrl + c
+Me:It'll get to a break point soon (when I can ctrl+c out)
+Marcus:git status
+Me:CLI back
+Marcus:run the 'git add -A'
+git status
+Me:Just like the Git-based procedure at RedHat. NEVER did that here. No WONDER the upload is bogus.
+Marcus:Yep
+git commit -amgit commit -am "Adding new files"git statuseb deploy
+Me:Nice (intuitive) step here is that with 'eb deploy' (instead of Git push) we directly control the upload.
+Marcus:If not using version control you can just use eb deploy and it will zip the contents of the app directory for you.
+Since it is setup with github you have to get the files there first. Then run eb deploy.You'd use that if you wanted to update the environment using the AWS console.
+Me:I was not aware. You saw the .zip I hand-created in the root source. I'll remove that and let eb deploy auto-create it.
+Marcus:Yes
+Me:THAT's where I saw the requirement for the (hand-created) .zip.
+Marcus:You upload the file in the console and it uses it that way. Or if you wanted to use an artifact it would require a zip file as well.
+Looks like it finished if you want to check.
+Me:There's the ERROR again!
+Marcus:Let's go to the ssh session and look at what it has.
+Me:.... But back to the live ssh for a ls
+Marcus:No bueno.
+Me:Muy malo, in fact.
+Marcus:Make a new directory to use as a test directory for a new application.
+Por supuesto.yeyescorrect
+Me:New LOCAL directory, I assume. And I assume it will be for a very tiny app.
+Marcus:Now copy the contents of ClinicalTrials_AWS to Marcus_APP
+Me:When that bulk copy has failed me locally, it's been because of a file with no extension and no content. No doubt why it failed also during the eb. I think I remember where exactly the culprit it. I'll stop the bulk copy.
+Marcus:We are going to start fresh.
+Me:I'm holding to start fresh. I like fresh. I'll move quickly.
+I see unfamiliar stuff in the .git subdir, no doubt created during the git session.
+Marcus:How do you want to proceed?
+Me:bulk copy in to the new directory now in progress. Is that the best next step?
+Marcus:Delete the following directories.
+.git.elasticbeanstalkdelete .gitignoreYep
+Me:Windows! (growl!)
+Marcus:Delete .elasticbeanstalk as well
+open .ebextensions and save the config file to the rootright click on white space and ctrl + v
+Me:I CUT it from .ebextensions. Should it be COPIED to the root
+See your arrow
+Marcus:Right click there and paste it
+Was the file not named as django.config?
+Me:Done (moved from .ebextensions)
+Marcus:So long as you have it.
+ok good dealNow delete .ebextensionsNow this like a clean application except for the .ssh directory. Let's delete it next.Ok now go to the command prompt and open it to the Marcus_APP directory.
+Me:OK. (Those keys were worthless anyway. NOT the source used in the build)
+Marcus:eb init
+Select the region you are in.
+Me:I'm over-confident, so I'll wait for your cue for every response.
+Marcus:Let's create a new application to eliminate that as an issue.
+Give it a nameIt's basically a folder name in Elastic BeanstalkyesYY
+Me:Y
+Marcus:select the correct key pair
+for that region
+Me:#2 is my "live" keypair
+Marcus:Okay here's the next command
+eb createSupply the name you want the environment to be known byTypially app type + name so you know what it is.okyes
+Me:I'm holding on Environment Name (remember I'm a rookie wrt environment, application, instance....). Can I take the default?
+Marcus:take the defualt again
+1Now open the eb console
+Me:Need to launch a new PuTTY session
+Marcus:I mean the console for EB not the ssh console
+Me:OK right.
+Marcus:Click on Marcus-App
+Now we can see what's happeinginhappeningMay I step away for a moment to get a drink from the vending machine?YesBRBRight onI'm back. It failed with the same error. This is because we did not have a .ebextensions directory. So we can copy the conf file into the directory and run 'eb deploy'. Then see how it performs.I forgot that we could have left that directory when we did the initial deployment. That's my bad.So we have to create the .ebextensions directoryNow paste the conf file in there.
+Me:I'm back too.
+Marcus:right on
+Me:has to be in CLI!
+Marcus:Now remvoe that file from the root of your directory
+Delete ...yepcoolfrom cmd prompt eb deploy
+Me:drat!
+Marcus:what is the contents of the conf file
+does the file wsqi.py exist in the ebdjango directory?
+Me:NO! And for a conformant environment I know better. I didn't need it at RedHat and don't for the local run. But I see immediately why it's puking.
+Oh yeah, right. It's there. Forget about 'puking'
+Marcus:okay, give me a moment.
+in the conf file is it spelled the same?Let's ssh into this instance.
+Me:Cut me some "fumble slack: because of PuTTY
+Marcus:ok
+eb sshfrom command lineMissing the ssh key pairyou can use putty if you wantGo to EC2 instandces and refresh
+Me:I can do that OR start PuTTY
+Marcus:cd /opt/python/current/app
+ls -alcd ebdjangols -al
+Me:Yahoo!
+Ahh!
+Marcus:Files are in place now
+what happens if you go back to the /opt/python/current/app directory and then run ebdjango/django.confWhat does the EB console say now?
+Me:so I'm not such a Linux whiz!
+Marcus:Let's try the following.
+open command prompttype the followingeb configureclseb configurescroll down to WSGIPathMy badeb config
+Me:Whew!
+Marcus:Hmm
+ctrl + c
+Me:locked
+Marcus:notepad
+scroll down to WSGIPathwell hmm
+Me:BTW I always told my students that "hmm" was a very professional and profound utterance (seriously!).
+Marcus:It's a head scratcher for sure at this point.
+:)
+Me:You've made our day! I assume that you'll escalate and accelerate as needed since this seems to be also something serious at AWS.
+Marcus:It is something simple I'm missing. Let me get with an EB subject matter expert. Give me just a few moments.
+Me:Take all the time you wish. My espresso machine is bottomless.
+Marcus:Let's change the name of the name.
+of the fileI believe it should be django.configah...
+Me:Hate to say this, but that's what it was before, so I thought it was a typo on my part. But let's just do it anyway, because the process I saw is VERY different from before.
+Marcus:from command prompt close notepad file then run eb deploy
+We can watch the status via the EB console if you likeLooks good.
+Me:I'm aware of the lag time between CLI and the console
+Marcus:here it comes
+Me:My BP is rising!
+Home at last!?!?!?!?
+Marcus:Always the basics that get ya.
+I'm not going to be much help on the app side.
+Me:YES. That's the root with the proper error! Now stay with me as I step into the app.
+NO. That's not the proper error screen. The app should be reporting views' paths based urls.py, which I somehow trashed in the process.So now, having crossed over into the app, and based on the django debug error display, my impulse is to place a proper urls.py into the root and then eb deploy again. Is that reasonable?
+Marcus:Sounds reasonable, but you're at the limit of what I know. The application side will be your meat and potatoes as we aren't developers.
+I'll send a follow-up on the key points for you.
+Me:I've captured the whole session, so I think I've got the breadcrumbs. And is it true that I can simply edit the source-->eb deploy as we did here?
+Marcus:Yes, make your file updates for the application. Then when ready simply run 'eb deploy' from the root of the application and it will get deployed.
+Me:We will treasure the "key points"! They're going into a sacred crypt immediately. Meanwhile I think I'm now reasonably fluent with AWS EB so that I can safely hand this off to a REAL dev/admin. So this chat will close. Will the case also close (I assume not). But I'm pretty confident.
+Marcus:Understood. Yes, we can close the case for now as the issue you were having problems with has been resolved.
+Should you run into another issue simply open a new case and we can work through it without the confusion of this case.
+Me:I copy (literally!) A MOST productive marathon! Should have listened to my co-founder and subscribed to Biz-Level immediately. Never would have gotten here by chasing links and blogs. Thanks, Marcus!
+Marcus:You did really well on your own being so new to this. It isn't the easiest set of services to pick up and run with.
+You are very welcom.e
+Me:Our most trusted consultant warned us last week to avoid PaaS altogether. I needed to give it another good try. Glad we did!
+Marcus:It's pretty cool once you get a good foundational understanding.
+Just takes time and practice like anything worth learning or using.I'm constantly learning something new every day.I'll let you go for now and send the follow up and get this guy resolved for you.Have a great remainder of your day.
+Me:Igualmente
+Marcus:Gracious
+	
+Marcus from AWS is Online

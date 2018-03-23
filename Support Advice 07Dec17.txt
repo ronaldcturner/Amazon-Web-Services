@@ -1,0 +1,33 @@
+I see that 'OPENSHIFT_REPO_DIR' - Repository containing the currently deployed version of the application(from the website [1]). In the environment you are deploying, there is no equivalent environment variable . But in beanstalk, you can pass this environment variable to your environment with currently deployed application's directory path (my assumption of Repository is directory). 
+
+In python/django the current application version is deployed in the directory: "/opt/python/current/app/". So you can follow this[2] document to pass env-variables in Beanstalk. I would suggest to pass env-variable with same name i.e 'OPENSHIFT_REPO_DIR'  so that you need not make changes to your code.
+
+According to documentation I see the folder structure and the content as shown below
+~/ebdjango/
+|-- .ebextensions
+|   `-- django.config
+|-- ebdjango
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- settings.py
+|   |-- settings.pyc
+|   |-- urls.pyc
+|   |-- wsgi.py
+|   |-- wsgi.pyc
+|-- db.sqlite3
+|-- manage.py
+`-- requirements.txt
+
+But in the file you shared, I see that you have __init__.py , __init__.pyc,  settings.py,  settings.pyc , urls.py,  urls.pyc,  wsgi.py,  wsgi.pyc under source directory itself. So I request you to create a new directory (named ebdjango) under source directoryand move  these files in this folder as shown above. Change the django.config file under .ebextentions with following content (I am asking to perform this step just see that this causing the issue). 
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: ebdjango/wsgi.py
+
+[1]- https://developers.openshift.com/managing-your-applications/environment-variables.html
+[2]- http://docs.aws.amazon.com/gettingstarted/latest/deploy/envvar.html
+
+
+[what I HAD]
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: clinicaltrials_AWS/wsgi.py

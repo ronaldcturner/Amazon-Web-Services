@@ -1,0 +1,49 @@
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC>eb init --interactive
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3): 3
+
+Select an application to use
+1) Marcus_APP
+2) ClinicalTrials_AWS
+3) [ Create new Application ]
+(default is 3): 1
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1):
+Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+Do you want to set up SSH for your instances?
+(Y/n): y
+
+Select a keypair.
+1) 09DecKeyPair
+2) 10Dec17KeyPair
+3) AWS-KeyPair
+4) ronskey
+5) [ Create new KeyPair ]
+(default is 4): 2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC>

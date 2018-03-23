@@ -1,0 +1,433 @@
+Sachin A. said to you:
+"esc" then :wq
+
+(02:02:22) Sachin A. said to you:
+curl -Iv localhost/xlate/health.html
+
+(02:03:30) Sachin A. said to you:
+ohhh..
+
+(02:04:33) You said to Sachin A.:
+Do I have to start a localhost first (127.0.0.1)?
+
+(02:04:55) Sachin A. said to you:
+angadi@u480fcf414420582c4c2a /> curl -Iv http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/xlate/dynatree/
+*   Trying 54.69.94.95...
+* Connected to marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com (54.69.94.95) port 80 (#0)
+> HEAD /xlate/dynatree/ HTTP/1.1
+> Host: marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com
+> User-Agent: curl/7.47.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+< Date: Mon, 08 Jan 2018 10:04:46 GMT
+Date: Mon, 08 Jan 2018 10:04:46 GMT
+< Server: Apache/2.4.27 (Amazon) mod_wsgi/3.5 Python/3.6.2
+Server: Apache/2.4.27 (Amazon) mod_wsgi/3.5 Python/3.6.2
+< X-Frame-Options: SAMEORIGIN
+X-Frame-Options: SAMEORIGIN
+< Content-Length: 96
+Content-Length: 96
+< Content-Type: text
+Content-Type: text
+< Via: 1.1 pdx2-proxy-1.amazon.com:80 (Cisco-WSA/10.5.1-296)
+Via: 1.1 pdx2-proxy-1.amazon.com:80 (Cisco-WSA/10.5.1-296)
+< Connection: keep-alive
+Connection: keep-alive
+
+< 
+* Connection #0 to host marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com left intact
+angadi@u480fcf414420582c4c2a />
+
+(02:05:26) Sachin A. said to you:
+http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/xlate/dynatree/
+
+works but if takes few seconds to give a 200 OK..
+
+(02:05:42) Sachin A. said to you:
+probably for now we will try to use this for health check..
+
+(02:05:51) Sachin A. said to you:
+and see if it works
+
+(02:06:57) Sachin A. said to you:
+let me double check
+
+(02:07:38) Sachin A. said to you:
+we have to edit 
+awseb-AWSEB-LAYMTF6PUYKS
+
+(02:08:35) Sachin A. said to you:
+leave it at HTTP only (sorry for confuision)
+
+(02:08:49) Sachin A. said to you:
+/xlate/dynatree/
+
+(02:09:10) Sachin A. said to you:
+Health threshold as 2
+
+(02:09:49) Sachin A. said to you:
+we will for a min.. 
+Fingers crossed :)
+
+(02:10:26) You said to Sachin A.:
+If this works, then I think I see what I need to do in the various parts of the sources. A little bit like spoofing health check.
+
+(02:11:05) Sachin A. said to you:
+Ok..
+
+(02:12:44) You said to Sachin A.:
+I see that you're now almost :45 past your hours of availability. Don't get us both into trouble if you have to continue this later. But I'm having fun and will stay as long as it takes.
+
+(02:14:13) Sachin A. said to you:
+Ron.. no such restrictions :).. we (AWS) are always happy to go an extra mile for our customers to ensure that our they have best experience with the support :)
+
+(02:15:04) You said to Sachin A.:
+I'm testing the permissions I just set. Not showing off.
+
+(02:16:17) You said to Sachin A.:
+Yup works perfectly!! so REV 3 still intact and functional
+
+(02:17:48) You said to Sachin A.:
+I just realized that I ALSO ran the same app, executing some of the same code (maybe). Did I ruin the experiment?
+
+(02:18:55) Sachin A. said to you:
+it's not working.. but we will not give up..
+
+(02:19:45) Sachin A. said to you:
+Ruin the experiment.. not very clear.. If you don't mind can you pls try to re-phrase it..
+
+(02:21:19) You said to Sachin A.:
+I re-ran the app from the demo's public web page, which executed the code in /xlate/dynatree
+
+(02:22:34) You said to Sachin A.:
+So did that disallow the effect of the .html we just inserted in /xlate?
+
+(02:24:17) Sachin A. said to you:
+cat /etc/httpd/conf.d/wsgi.conf
+
+(02:25:14) Sachin A. said to you:
+pls give me that path
+
+(02:26:56) Sachin A. said to you:
+With reagrds to your question.. I think it should not cause a problem
+
+(02:30:38) Sachin A. said to you:
+cp /etc/httpd/conf.d/wsgi.conf /etc/httpd/conf.d/wsgi.conf.bak
+
+(02:31:40) Sachin A. said to you:
+cd /etc/httpd/conf.d/
+
+(02:32:07) Sachin A. said to you:
+vim wsgi.conf
+
+(02:33:11) Sachin A. said to you:
+can you copy and paste the line
+
+(02:34:01) Sachin A. said to you:
+just ping them to me..
+
+(02:34:17) You said to Sachin A.:
+WSGIScriptAlias / /opt/python/current/app/ebdjango/wsgi.py
+
+Alias /static/ /opt/python/current/app/static/
+
+(02:35:00) Sachin A. said to you:
+Here,,, what we are trying to create a static python file under the path /opt/python/current/app/static
+
+(02:35:06) Sachin A. said to you:
+come out of the file
+
+(02:35:55) Sachin A. said to you:
+mkdir -p /opt/python/current/app/static
+
+(02:36:21) Sachin A. said to you:
+cd /opt/python/current/app/
+
+(02:36:36) Sachin A. said to you:
+ls -lrt
+
+(02:37:32) Sachin A. said to you:
+cd xlate
+
+(02:37:46) Sachin A. said to you:
+ls
+
+(02:38:10) Sachin A. said to you:
+cp health.py /opt/python/current/app/static
+
+(02:38:53) Sachin A. said to you:
+cp health.py /opt/python/current/app/static/
+
+(02:39:07) Sachin A. said to you:
+Sorry.. it should be within that directory..,..
+
+(02:39:23) Sachin A. said to you:
+you can copy once again..
+
+(02:39:38) Sachin A. said to you:
+cp health.py /opt/python/current/app/static/
+
+(02:40:29) Sachin A. said to you:
+end it with "/"
+
+(02:40:54) Sachin A. said to you:
+it was copied earlier itself :)
+
+(02:41:19) Sachin A. said to you:
+now we will restart apache.. 
+service httpd restart
+
+(02:41:59) Sachin A. said to you:
+curl -Iv localhost/static
+
+(02:42:40) Sachin A. said to you:
+curl -Iv localhost/static/
+
+(02:43:18) Sachin A. said to you:
+curl -Iv localhost/static/health.py
+
+(02:43:44) You said to Sachin A.:
+Yahoo (I think)
+
+(02:45:35) Sachin A. said to you:
+one min.. speaking with a colleague regarding apache
+
+(02:47:27) Sachin A. said to you:
+[ec2-user@ip-172-31-16-223 conf.d]$ curl -Iv http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/static/health.py
+*   Trying 52.11.26.47...
+* TCP_NODELAY set
+* Connected to marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com (52.11.26.47) port 80 (#0)
+> HEAD /static/health.py HTTP/1.1
+> Host: marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com
+> User-Agent: curl/7.53.1
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+< Date: Mon, 08 Jan 2018 10:47:16 GMT
+Date: Mon, 08 Jan 2018 10:47:16 GMT
+< Content-Length: 33
+Content-Length: 33
+< Connection: keep-alive
+Connection: keep-alive
+< Server: Apache/2.4.27 (Amazon) mod_wsgi/3.5 Python/3.6.2
+Server: Apache/2.4.27 (Amazon) mod_wsgi/3.5 Python/3.6.2
+< Last-Modified: Mon, 08 Jan 2018 10:41:00 GMT
+Last-Modified: Mon, 08 Jan 2018 10:41:00 GMT
+< ETag: "21-562416f21b44e"
+ETag: "21-562416f21b44e"
+< Accept-Ranges: bytes
+Accept-Ranges: bytes
+
+< 
+* Connection #0 to host marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com left intact
+[ec2-user@ip-172-31-16-223 conf.d]$
+
+(02:47:59) Sachin A. said to you:
+we will allow this path in ALB
+
+(02:48:17) Sachin A. said to you:
+/static/health.py
+
+(02:48:49) Sachin A. said to you:
+Pls open aws console
+
+(02:49:15) Sachin A. said to you:
+switch to your broswert
+
+(02:49:42) Sachin A. said to you:
+/static/health.py
+
+(02:50:25) You said to Sachin A.:
+I see....
+
+(02:51:18) Sachin A. said to you:
+http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/static/health.py
+
+(02:52:08) You said to Sachin A.:
+good
+
+(02:53:31) Sachin A. said to you:
+shall we proceed with allowing this path in ALB ?
+
+(02:54:25) You said to Sachin A.:
+What we did just broke the application
+
+(02:54:45) Sachin A. said to you:
+Hmm.. cancel the ALB settings window..
+
+(02:55:19) Sachin A. said to you:
+shall we try reploy from the GUI ?
+
+(02:55:51) Sachin A. said to you:
+to bring your app up.. once it's up we will try creating this health.py file..
+
+(02:56:12) You said to Sachin A.:
+I follow. and is this the right GUI page?
+
+(02:56:18) Sachin A. said to you:
+Yes..
+
+(02:56:28) Sachin A. said to you:
+let me pull the file name
+
+(02:56:56) Sachin A. said to you:
+Deployed Version: app-180103_133512
+
+(02:59:02) Sachin A. said to you:
+It is workingh now
+
+(02:59:17) You said to Sachin A.:
+I concur.
+
+(02:59:53) Sachin A. said to you:
+Back to Putty terminal
+
+(03:00:36) You said to Sachin A.:
+I should re-enter because the id got changed
+
+(03:00:54) Sachin A. said to you:
+which ID  are we talking about ?
+
+(03:01:22) You said to Sachin A.:
+the public ID(?) I think got changed.
+
+(03:01:39) Sachin A. said to you:
+Most likely it should be the same one.. (on the existing instance it will re-reploy)
+
+(03:01:45) Sachin A. said to you:
+however you can double check
+
+(03:02:39) You said to Sachin A.:
+Let's assume that ec2-35-164-99-188.us-west-2.compute.amazonaws.com is the same one. Move on.
+
+(03:03:04) Sachin A. said to you:
+mkdir -p /opt/python/current/app/static/
+
+(03:04:54) Sachin A. said to you:
+inside the static directory
+
+(03:04:57) Sachin A. said to you:
+vim health.py
+
+(03:06:30) You said to Sachin A.:
+same Python script?
+
+(03:07:39) Sachin A. said to you:
+Press enter to save..
+
+(03:09:36) Sachin A. said to you:
+FYI: As now of your application is still alive. 
+http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/xlate/dynatree
+
+(03:09:48) Sachin A. said to you:
+now we will try reloading apache
+
+(03:10:00) You said to Sachin A.:
+I'll assume that. Onward!
+
+(03:10:33) Sachin A. said to you:
+service httpd reload (not restart)
+
+(03:11:41) Sachin A. said to you:
+http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/static/health.py
+
+(03:11:43) Sachin A. said to you:
+works
+
+(03:12:01) Sachin A. said to you:
+Your app is also working :)
+
+(03:12:21) You said to Sachin A.:
+And the health of the ALB?
+
+(03:12:25) Sachin A. said to you:
+Now, let's allow path in load balancer
+
+(03:12:48) You said to Sachin A.:
+OK
+
+(03:13:07) Sachin A. said to you:
+let me double check the name
+
+(03:13:31) Sachin A. said to you:
+awseb-AWSEB-LAYMTF6PUYKS
+
+(03:13:57) Sachin A. said to you:
+/static/health.py
+
+(03:14:01) You said to Sachin A.:
+thanks
+
+(03:14:30) Sachin A. said to you:
+No no.. it should start from static
+
+(03:14:54) You said to Sachin A.:
+Right. Just as I did by hand
+
+(03:15:13) Sachin A. said to you:
+Fingers crossed!
+
+(03:16:21) You said to Sachin A.:
+GREEN!!!!!!!!!!!!!!!!
+
+(03:16:31) Sachin A. said to you:
+Nice!!!!
+
+(03:17:14) Sachin A. said to you:
+In short there are two things which has to be done.
+
+(03:18:00) Sachin A. said to you:
+1. create a static file for health check via ebextension
+2. modify the health check path to /static/health.py, again this has to be done via ebextension..
+
+(03:18:35) Sachin A. said to you:
+I will help you out to write ebextension.. allow me some time.. 
+probably by tomo.. I will share them..
+
+(03:18:58) You said to Sachin A.:
+Exactly what I hoped you'd say. Here's my little agenda:
+
+(03:22:28) You said to Sachin A.:
+1. Capture the entire running script of our chat, 2. assure myself that the app is settled., 3. return to the documentation on .ebextensions (I get the general idea). 4. Allow you to cook down all the noise to a clean .ebextention cookbook + any possible console-related processes. And you've already pointed me to how to change permissions via .ebextentions as well. That should tidy everything up.
+
+(03:23:10) Sachin A. said to you:
+Sure..
+
+(03:23:27) Sachin A. said to you:
+I will also be sharing you a summary of the conversation we had..
+
+(03:23:48) You said to Sachin A.:
+That is a WONDERFUL service!
+
+(03:23:52) Sachin A. said to you:
+Ron, I would appreciate your feedback on your Customer Experience on this case. We, in Amazon take the customer ratings very seriously and strive to provide best customer experiences. You can provide feedback by providing the rating (for each correspondence) which is usually below my siginature.
+
+(03:24:07) You said to Sachin A.:
+Absolutely will do!
+
+(03:24:55) Sachin A. said to you:
+Thank you very much..
+
+(03:25:29) Sachin A. said to you:
+In case if you would to share any other written feedback.. you can directly provide on the case itself (reply)
+
+(03:25:41) You said to Sachin A.:
+Shall I come back tomorrow and specifically address you so that I get queued over to you?
+
+(03:26:01) Sachin A. said to you:
+Shortly I will be sending you the summary and probably by tomorrow I will get back to you with ebextensions
+
+(03:26:15) You said to Sachin A.:
+I copy. Thank you again.
+
+(03:26:36) Sachin A. said to you:
+If we are done.. then we can close this chat for now..
+
+(03:26:44) Sachin A. said to you:
+you can*
+
+(03:26:53) Sachin A. said to you:
+ok...

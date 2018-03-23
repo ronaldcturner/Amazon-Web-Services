@@ -1,0 +1,334 @@
+CODE SOURCE DIRECORY:
+=====================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>dir
+ Volume in drive C is OS
+ Volume Serial Number is 1C7D-5A50
+
+ Directory of C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS
+
+12/01/2017  11:46 AM    <DIR>          .
+12/01/2017  11:46 AM    <DIR>          ..
+11/30/2017  01:40 AM    <DIR>          .ebextensions
+11/30/2017  02:28 AM    <DIR>          .elasticbeanstalk
+11/30/2017  01:49 AM    <DIR>          .git
+11/30/2017  01:46 AM               118 .gitignore
+09/24/2017  10:51 PM               356 05Jul16 correction notes with files changes.txt
+09/24/2017  10:51 PM            35,219 13May16 Migration revisions for Subordinated (parallel) demos.docx
+10/09/2017  12:48 PM             6,873 ABAC_Studio-LOCAL.html
+09/25/2017  01:49 AM             7,088 ABAC_Studio.html
+11/29/2017  11:06 PM             7,043 ABAC_Studio_AWS.html
+10/09/2017  12:50 PM    <DIR>          buildPolicies
+10/09/2017  12:49 PM    <DIR>          BuildPolicyConsole
+09/25/2017  12:30 AM    <DIR>          compile
+09/24/2017  10:51 PM             4,600 Crib Sheet For Running XLATE conversions.docx
+09/24/2017  11:43 PM            44,032 db.sqlite3
+09/24/2017  10:51 PM            33,159 Dev-Completion notes for dot-net to Cloud.docx
+09/24/2017  10:51 PM            40,960 django.db.backends.sqlite3
+09/24/2017  11:09 PM    <DIR>          editRule
+09/24/2017  10:51 PM               954 InfoTypes.xml
+09/24/2017  10:51 PM             5,125 JSON-BusRules
+11/30/2017  01:20 AM               261 manage.py
+09/24/2017  10:51 PM             1,954 Multi-Demo Revision Notes (13May16).txt
+09/28/2017  12:09 AM               955 Pip-list.txt
+09/24/2017  10:51 PM               614 Release Notes.txt
+11/07/2017  05:41 PM               402 requirements.txt
+10/19/2017  10:24 PM               385 requirements.txt-MISSING pyreadline
+09/24/2017  11:37 PM                 0 SentenceLayoutDefinition-ABAC-eTMF-SAFE (copy).csv
+09/24/2017  11:37 PM                 0 SentenceLayoutDefinition-ABAC-eTMF-SAFE.csv
+11/30/2017  12:57 AM             2,325 settings.py
+09/24/2017  11:09 PM             2,558 settings.pyc
+09/24/2017  10:51 PM               296 setup-EDITED.py
+09/24/2017  10:51 PM               282 setup.py
+09/27/2017  11:19 PM             1,351 stable-req.txt
+10/09/2017  06:45 PM                96 StartServer.bat
+09/24/2017  10:51 PM            31,449 Tree View of Sylvia Project.odt
+10/11/2017  09:22 PM            73,949 tree.txt
+09/24/2017  10:51 PM             2,081 urls-NEW.py
+09/25/2017  12:46 AM             1,451 urls.py
+09/27/2017  07:51 PM             1,268 urls.pyc
+10/09/2017  12:18 PM             7,097 Welcome to the ABAC Policy Studio-LOCAL.htm
+10/09/2017  12:18 PM             7,097 Welcome to the ABAC Policy Studio.htm
+09/24/2017  10:51 PM            18,376 wsgi-127-DISPATCH.py
+09/24/2017  10:51 PM            17,646 wsgi-CUSTOM.py
+09/24/2017  10:51 PM            40,539 wsgi-STOCK.py
+09/24/2017  10:51 PM               385 wsgi.py
+09/24/2017  11:09 PM               629 wsgi.pyc
+11/07/2017  11:25 AM    <DIR>          XACMLstore
+09/24/2017  11:09 PM    <DIR>          xlate
+09/24/2017  10:51 PM                 0 xlatePhantom.txt
+09/24/2017  10:51 PM                 0 __init__.py
+11/30/2017  01:12 AM    <DIR>          __pycache__
+09/24/2017  10:51 PM               162 ~$May16 Migration revisions for Subordinated (parallel) demos.docx
+              41 File(s)        399,135 bytes
+              12 Dir(s)  1,432,442,486,784 bytes free
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+
+CONTENTS OF wsgi.py:
+====================
+"""
+WSGI config for buildpolicy project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
+"""
+
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+
+CONTENTS OF requirements.txt:
+==============================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>type requirements.txt
+certifi==2017.7.27.1
+chardet==3.0.4
+colorama==0.3.9
+decorator==4.1.2
+Django==1.11.6
+idna==2.6
+ipython==6.2.1
+ipython-genutils==0.2.0
+jedi==0.11.0
+lxml==4.0.0
+parso==0.1.0
+pickleshare==0.7.4
+prompt-toolkit==1.0.15
+Pygments==2.2.0
+pyreadline==2.1
+pytz==2017.2
+requests==2.18.4
+simplegeneric==0.8.1
+six==1.11.0
+traitlets==4.3.2
+urllib3==1.22
+wcwidth==0.1.7
+win-unicode-console==0.5
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+
+CONTENTS OF .ebextensions:
+==========================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>dir ./".ebextensons"
+Invalid switch - "".ebextensons"".
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>dir ".ebextensions"
+ Volume in drive C is OS
+ Volume Serial Number is 1C7D-5A50
+
+ Directory of C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS\.ebextensions
+
+11/30/2017  01:40 AM    <DIR>          .
+11/30/2017  01:40 AM    <DIR>          ..
+11/30/2017  02:04 AM               100 django.config
+               1 File(s)            100 bytes
+               2 Dir(s)  1,432,442,564,608 bytes free
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+
+CONTENTS OF django.config:
+==========================
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: ClinicalTrials_AWS/wsgi.py
+    
+PREVIOUSLY RAN eb init:
+=======================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3):
+
+Select an application to use
+1) django-tutorial
+2) [ Create new Application ]
+(default is 2): clinicaltrials_AWS
+Sorry, that is not a valid choice. Please choose a number between 1 and 2.
+(default is 2):
+
+Enter Application Name
+(default is "ClinicalTrials_AWS"):
+Application ClinicalTrials_AWS has been created.
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1): 1
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n): y
+
+Enter Repository Name
+(default is "clinical-trials.git"):
+ERROR: Repository names cannot end in '.git'
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create clinicaltrials_AWS
+ERROR: This directory has not been set up with the EB CLI
+You must first run "eb init".
+eb
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3):
+
+Select an application to use
+1) ClinicalTrials_AWS
+2) django-tutorial
+3) [ Create new Application ]
+(default is 1):
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1):
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n): N
+Do you want to set up SSH for your instances?
+(Y/n): Y
+
+Select a keypair.
+1) AWS-KeyPair
+2) ronskey
+3) [ Create new KeyPair ]
+(default is 2):
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+    
+START CLEAN:
+============
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb terminate django-env
+The environment "django-env" and all associated instances will be terminated.
+To confirm, type the environment name: django-env
+INFO: terminateEnvironment is starting.
+INFO: Deleted CloudWatch alarm named: awseb-e-zwkbpczmmx-stack-AWSEBCloudwatchAlarmLow-4DDBLTCHQGUV
+INFO: Deleted CloudWatch alarm named: awseb-e-zwkbpczmmx-stack-AWSEBCloudwatchAlarmHigh-13VOX4LG09MIG
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:130537a0-dac8-4ffe-8074-08727e6f15f4:auto
+ScalingGroupName/awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingGroup-1SAKFC70VX5SD:policyName/awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingScaleDownPolicy
+-1N2IQZ8BJED5L
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:8a7e4644-2a4a-40a4-9783-dff266102dbd:auto
+ScalingGroupName/awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingGroup-1SAKFC70VX5SD:policyName/awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingScaleUpPolicy-1
+FKVPPRI91HJN
+INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
+INFO: Environment health has transitioned from Ok to Info. Terminate in progress (running for 58 seconds).
+WARN: Environment health has transitioned from Info to Severe. Terminate in progress (running for 2 minutes). None of the instances are sending d
+ata.
+INFO: Environment health has transitioned from Severe to No Data. Terminate in progress (running for 2 minutes). There are no instances. Auto Sca
+ling group desired capacity is set to zero.
+INFO: Removed instance [i-0c6136ca7f401a1b9] from your environment.
+INFO: Deleted Auto Scaling group named: awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingGroup-1SAKFC70VX5SD
+INFO: Deleted Auto Scaling launch configuration named: awseb-e-zwkbpczmmx-stack-AWSEBAutoScalingLaunchConfiguration-18F9RTOU4GB2M
+INFO: Deleted security group named: awseb-e-zwkbpczmmx-stack-AWSEBSecurityGroup-59LX4533T6CC
+INFO: Deleted load balancer named: awseb-e-z-AWSEBLoa-1DQAT8U6PITSW
+INFO: Deleting SNS topic for environment django-env.
+INFO: terminateEnvironment completed successfully.
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+
+ATTEMPT TO RUN eb init again:
+=============================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n):
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+
+ATTEMPT TO CREATE django-env (ERROR at line 317 of this listing):
+=================================================================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create django-env
+WARNING: You have uncommitted changes.
+Creating application version archive "app-354c-171201_121217".
+Uploading: [##################################################] 100% Done...
+Environment details for: django-env
+  Application name: ClinicalTrials_AWS
+  Region: us-west-2
+  Deployed Version: app-354c-171201_121217
+  Environment ID: e-rqf6i9swjf
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.0
+  Tier: WebServer-Standard
+  CNAME: UNKNOWN
+  Updated: 2017-12-01 20:13:46.539000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created load balancer named: awseb-e-r-AWSEBLoa-VHZ7XZOLSJU3
+INFO: Created security group named: awseb-e-rqf6i9swjf-stack-AWSEBSecurityGroup-B4RQ34VBCFPB
+INFO: Created Auto Scaling launch configuration named: awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingLaunchConfiguration-1SHRXRE62SH0B
+INFO: Environment health has transitioned to Pending. Initialization in progress (running for 12 seconds). There are no instances.
+INFO: Created Auto Scaling group named: awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingGroup-1NLN5X567YQJ9
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Added instance [i-0b618487de1b26224] to your environment.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:1c4e74bd-0bc9-497f-bb73-96ec7bcd5122:auto
+ScalingGroupName/awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingGroup-1NLN5X567YQJ9:policyName/awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingScaleDownPolicy
+-1EKJJEH9Q1EQS
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:83be0284-9133-420e-b71b-356b10b1de74:auto
+ScalingGroupName/awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingGroup-1NLN5X567YQJ9:policyName/awseb-e-rqf6i9swjf-stack-AWSEBAutoScalingScaleUpPolicy-1
+9OX1DQYRVV4F
+INFO: Created CloudWatch alarm named: awseb-e-rqf6i9swjf-stack-AWSEBCloudwatchAlarmLow-C67Z4P8H7IH5
+INFO: Created CloudWatch alarm named: awseb-e-rqf6i9swjf-stack-AWSEBCloudwatchAlarmHigh-1OC3JTFB9DNWX
+ERROR: Your WSGIPath refers to a file that does not exist.
+INFO: Environment health has transitioned from Pending to Ok. Initialization completed 19 seconds ago and took 3 minutes.
+INFO: Successfully launched environment: django-env
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
+    
+ATTEMPT TO RUN APP:
+===================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb open
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS> 
+
+BROWSER: "401 Not Found":
+=========================
+URL in pop-up browser: "django-env.yg8gsmp38n.us-west-2.elasticbeanstalk.com"
+"The requested URL / was not found on this server"

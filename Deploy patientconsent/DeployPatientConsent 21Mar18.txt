@@ -1,0 +1,83 @@
+C:\XpressRules\PatientConsent>eb list
+Marcus-APP-VPC-REV3
+* clinicaltrials
+
+C:\XpressRules\PatientConsent>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets suebnet-2b924962,subnet-9aea6bfd --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): patientconsent
+Enter DNS CNAME prefix
+(default is patientconsent):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180321_145352".
+Uploading: [##################################################] 100% Done...
+ERROR: ServiceError - Configuration validation exception: Invalid option value: 'suebnet-2b924962,subnet-9aea6bfd' (Namespace: 'aws:ec2:vpc', Opt
+ionName: 'ELBSubnets'): The subnet 'suebnet-2b924962' does not exist.
+
+C:\XpressRules\PatientConsent>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets subnet-2b924962,subnet-9aea6bfd --vpc.
+publicip
+Enter Environment Name
+(default is Marcus-APP-dev): patientconsent
+Enter DNS CNAME prefix
+(default is patientconsent):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180321_145627".
+Uploading: [##################################################] 100% Done...
+Environment details for: patientconsent
+  Application name: Marcus_APP
+  Region: us-west-2
+  Deployed Version: app-180321_145627
+  Environment ID: e-tcemmq5gbi
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.5
+  Tier: WebServer-Standard-1.0
+  CNAME: patientconsent.us-west-2.elasticbeanstalk.com
+  Updated: 2018-03-21 21:56:42.960000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2:596452634722:targetgroup/awseb-AWSEB-1TKVBYCLL5BUQ/6d77b4708b26c8b8
+INFO: Created security group named: sg-17658569
+INFO: Created security group named: sg-956989eb
+INFO: Created Auto Scaling launch configuration named: awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingLaunchConfiguration-1KVSF8U8025U9
+INFO: Created Auto Scaling group named: awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingGroup-ZI64BX1EJ2D
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:8a3a10d3-d0b0-4205-b04c-75bb4ad5b36f:auto
+ScalingGroupName/awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingGroup-ZI64BX1EJ2D:policyName/awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingScaleUpPolicy-1KZ
+4H9CWNGO8L
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:fc373222-be0a-4523-be06-43ae58267b35:auto
+ScalingGroupName/awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingGroup-ZI64BX1EJ2D:policyName/awseb-e-tcemmq5gbi-stack-AWSEBAutoScalingScaleDownPolicy-1
+O6AAEWR9MJFE
+INFO: Created CloudWatch alarm named: awseb-e-tcemmq5gbi-stack-AWSEBCloudwatchAlarmHigh-9FCKNCXYP3Z5
+INFO: Created CloudWatch alarm named: awseb-e-tcemmq5gbi-stack-AWSEBCloudwatchAlarmLow-3ZUDLNPYVJOX
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2:596452634722:loadbalancer/app/awseb-AWSEB-PULKEI3GQDFW/0ce070de2dcd6d40
+
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2:596452634722:listener/app/awseb-AWSEB-PULKEI3GQDFW/0ce070de2dc
+d6d40/e82318a5895703ab
+INFO: Successfully launched environment: patientconsent
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+
+C:\XpressRules\PatientConsent>eb list
+Marcus-APP-VPC-REV3
+* clinicaltrials
+patientconsent
+
+C:\XpressRules\PatientConsent>eb use patientconsent
+
+C:\XpressRules\PatientConsent>eb list
+Marcus-APP-VPC-REV3
+clinicaltrials
+* patientconsent
+
+C:\XpressRules\PatientConsent>eb open
+
+C:\XpressRules\PatientConsent>

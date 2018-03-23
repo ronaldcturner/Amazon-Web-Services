@@ -1,0 +1,253 @@
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>dir
+ Volume in drive C is OS
+ Volume Serial Number is 1C7D-5A50
+
+ Directory of C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS
+
+11/30/2017  12:35 AM    <DIR>          .
+11/30/2017  12:35 AM    <DIR>          ..
+11/18/2017  01:30 AM    <DIR>          .git
+09/24/2017  10:51 PM               356 05Jul16 correction notes with files changes.txt
+09/24/2017  10:51 PM            35,219 13May16 Migration revisions for Subordinated (parallel) demos.docx
+10/09/2017  12:48 PM             6,873 ABAC_Studio-LOCAL.html
+09/25/2017  01:49 AM             7,088 ABAC_Studio.html
+11/29/2017  11:06 PM             7,043 ABAC_Studio_AWS.html
+10/09/2017  12:50 PM    <DIR>          buildPolicies
+10/09/2017  12:49 PM    <DIR>          BuildPolicyConsole
+09/25/2017  12:30 AM    <DIR>          compile
+09/24/2017  10:51 PM             4,600 Crib Sheet For Running XLATE conversions.docx
+09/24/2017  11:43 PM            44,032 db.sqlite3
+09/24/2017  10:51 PM            33,159 Dev-Completion notes for dot-net to Cloud.docx
+09/24/2017  10:51 PM            40,960 django.db.backends.sqlite3
+09/24/2017  11:09 PM    <DIR>          editRule
+09/24/2017  10:51 PM               954 InfoTypes.xml
+09/24/2017  10:51 PM             5,125 JSON-BusRules
+11/30/2017  01:20 AM               261 manage.py
+09/24/2017  10:51 PM             1,954 Multi-Demo Revision Notes (13May16).txt
+09/28/2017  12:09 AM               955 Pip-list.txt
+09/24/2017  10:51 PM               614 Release Notes.txt
+11/07/2017  05:41 PM               402 requirements.txt
+10/19/2017  10:24 PM               385 requirements.txt-MISSING pyreadline
+09/24/2017  11:37 PM                 0 SentenceLayoutDefinition-ABAC-eTMF-SAFE (copy).csv
+09/24/2017  11:37 PM                 0 SentenceLayoutDefinition-ABAC-eTMF-SAFE.csv
+11/30/2017  12:57 AM             2,325 settings.py
+09/24/2017  11:09 PM             2,558 settings.pyc
+09/24/2017  10:51 PM               296 setup-EDITED.py
+09/24/2017  10:51 PM               282 setup.py
+09/27/2017  11:19 PM             1,351 stable-req.txt
+10/09/2017  06:45 PM                96 StartServer.bat
+09/24/2017  10:51 PM            31,449 Tree View of Sylvia Project.odt
+10/11/2017  09:22 PM            73,949 tree.txt
+09/24/2017  10:51 PM             2,081 urls-NEW.py
+09/25/2017  12:46 AM             1,451 urls.py
+09/27/2017  07:51 PM             1,268 urls.pyc
+10/09/2017  12:18 PM             7,097 Welcome to the ABAC Policy Studio-LOCAL.htm
+10/09/2017  12:18 PM             7,097 Welcome to the ABAC Policy Studio.htm
+09/24/2017  10:51 PM            18,376 wsgi-127-DISPATCH.py
+09/24/2017  10:51 PM            17,646 wsgi-CUSTOM.py
+09/24/2017  10:51 PM            40,539 wsgi-STOCK.py
+09/24/2017  10:51 PM               385 wsgi.py
+09/24/2017  11:09 PM               629 wsgi.pyc
+11/07/2017  11:25 AM    <DIR>          XACMLstore
+09/24/2017  11:09 PM    <DIR>          xlate
+09/24/2017  10:51 PM                 0 xlatePhantom.txt
+09/24/2017  10:51 PM                 0 __init__.py
+11/30/2017  01:12 AM    <DIR>          __pycache__
+09/24/2017  10:51 PM               162 ~$May16 Migration revisions for Subordinated (parallel) demos.docx
+              40 File(s)        399,017 bytes
+              10 Dir(s)  1,438,940,106,752 bytes free
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>dir requirements.txt
+ Volume in drive C is OS
+ Volume Serial Number is 1C7D-5A50
+
+ Directory of C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS
+
+11/07/2017  05:41 PM               402 requirements.txt
+               1 File(s)            402 bytes
+               0 Dir(s)  1,438,939,963,392 bytes free
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>type requirements.txt
+certifi==2017.7.27.1
+chardet==3.0.4
+colorama==0.3.9
+decorator==4.1.2
+Django==1.11.6
+idna==2.6
+ipython==6.2.1
+ipython-genutils==0.2.0
+jedi==0.11.0
+lxml==4.0.0
+parso==0.1.0
+pickleshare==0.7.4
+prompt-toolkit==1.0.15
+Pygments==2.2.0
+pyreadline==2.1
+pytz==2017.2
+requests==2.18.4
+simplegeneric==0.8.1
+six==1.11.0
+traitlets==4.3.2
+urllib3==1.22
+wcwidth==0.1.7
+win-unicode-console==0.5
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>mkdir .ebextensions
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create clinicaltrials_AWS
+ERROR: This directory has not been set up with the EB CLI
+You must first run "eb init".
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3):
+
+Select an application to use
+1) django-tutorial
+2) [ Create new Application ]
+(default is 2): clinicaltrials_AWS
+Sorry, that is not a valid choice. Please choose a number between 1 and 2.
+(default is 2):
+
+Enter Application Name
+(default is "ClinicalTrials_AWS"):
+Application ClinicalTrials_AWS has been created.
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1): 1
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n): y
+
+Enter Repository Name
+(default is "clinical-trials.git"):
+ERROR: Repository names cannot end in '.git'
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create clinicaltrials_AWS
+ERROR: This directory has not been set up with the EB CLI
+You must first run "eb init".
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3):
+
+Select an application to use
+1) ClinicalTrials_AWS
+2) django-tutorial
+3) [ Create new Application ]
+(default is 1):
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1):
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n): N
+Do you want to set up SSH for your instances?
+(Y/n): Y
+
+Select a keypair.
+1) AWS-KeyPair
+2) ronskey
+3) [ Create new KeyPair ]
+(default is 2):
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>ebopen
+'ebopen' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb open
+ERROR: This branch does not have a default environment. You must either specify an environment by typing "eb open my-env-name" or set a default e
+nvironment by typing "eb use my-env-name".
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb use clinicalTrials_AWS
+ERROR: Environment "clinicalTrials_AWS" not Found.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb use ClinicalTrials_AWS
+ERROR: Environment "ClinicalTrials_AWS" not Found.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create django-env
+WARNING: You have uncommitted changes.
+Creating application version archive "app-354c-171130_014955".
+Uploading: [##################################################] 100% Done...
+Environment details for: django-env
+  Application name: ClinicalTrials_AWS
+  Region: us-west-2
+  Deployed Version: app-354c-171130_014955
+  Environment ID: e-ep7s3dutkq
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.0
+  Tier: WebServer-Standard
+  CNAME: UNKNOWN
+  Updated: 2017-11-30 09:51:23.908000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Environment health has transitioned to Pending. Initialization in progress (running for 10 seconds). There are no instances.
+INFO: Created load balancer named: awseb-e-e-AWSEBLoa-1FSVCG1Q6WLLU
+INFO: Created security group named: awseb-e-ep7s3dutkq-stack-AWSEBSecurityGroup-11MY109MG43ED
+INFO: Created Auto Scaling launch configuration named: awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingLaunchConfiguration-3S2XA3MBN8NK
+INFO: Created Auto Scaling group named: awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingGroup-MJEALGY6G9PC
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:664fa68b-a9aa-4113-8783-7cdac066360a:auto
+ScalingGroupName/awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingGroup-MJEALGY6G9PC:policyName/awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingScaleDownPolicy-
+1QMN3H1EZ3FAV
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:80a3a159-41c6-4cdd-bc13-0ff20ce52281:auto
+ScalingGroupName/awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingGroup-MJEALGY6G9PC:policyName/awseb-e-ep7s3dutkq-stack-AWSEBAutoScalingScaleUpPolicy-D7
+PQLBKYR1RY
+INFO: Created CloudWatch alarm named: awseb-e-ep7s3dutkq-stack-AWSEBCloudwatchAlarmLow-F9DMDOGM5QO
+INFO: Created CloudWatch alarm named: awseb-e-ep7s3dutkq-stack-AWSEBCloudwatchAlarmHigh-1T6JZWTYBT3HD
+INFO: Added instance [i-065589f70be6a86a1] to your environment.
+ERROR: Your WSGIPath refers to a file that does not exist.
+INFO: Environment health has transitioned from Pending to Ok. Initialization completed 4 seconds ago and took 3 minutes.
+INFO: Successfully launched environment: django-env
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>

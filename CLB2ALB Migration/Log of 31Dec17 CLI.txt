@@ -1,0 +1,71 @@
+==========================================================================================================
+[Application source .ebextensions/ files now updated per AWS "Configuring an Application Load Balancer"
+i Initiated then aborted an "eb create [no parameters]," in which I allowed the default name "Marcus-APP-dev" for the environment.
+The aborted environment name then appeared with asterisk, likely indicating "invalid" or "incomplete" or "spurious"
+Attempted to run the app from the Web. Failed (of course).
+Below: I terminated environment Marcus-APP-dev, which also terminated the application.]
+=========================================================================================================
+
+C:\Users\RonT>cd "C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP"
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb list -a
+* Marcus-APP-dev
+ClinicalTrials
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb list
+* Marcus-APP-dev
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb list -a
+* Marcus-APP-dev
+ClinicalTrials
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb list
+* Marcus-APP-dev
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb terminate Marcus-APP-dev
+The environment "Marcus-APP-dev" and all associated instances will be terminated.
+To confirm, type the environment name: Marcus-App-dev
+ERROR: ValidationError - Names do not match. Exiting.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>Marcus-APP-dev
+'Marcus-APP-dev' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb terminate Marcus-APP-dev
+The environment "Marcus-APP-dev" and all associated instances will be terminated.
+To confirm, type the environment name: Marcus-APP-dev
+INFO: terminateEnvironment is starting.
+INFO: Deleted CloudWatch alarm named: awseb-e-k2dacer2pc-stack-AWSEBCloudwatchAlarmLow-ETXKYRM48LGV
+INFO: Deleted CloudWatch alarm named: awseb-e-k2dacer2pc-stack-AWSEBCloudwatchAlarmHigh-1UYXLRLB9CRAM
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:624b1b72-6700-4cfc-bdae-247a67ca89c8:auto
+ScalingGroupName/awseb-e-k2dacer2pc-stack-AWSEBAutoScalingGroup-1W06CZLJO5RC9:policyName/awseb-e-k2dacer2pc-stack-AWSEBAutoScalingScaleDownPolicy
+-L9ZMFF77JA9A
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:eada65f6-5a40-42e5-ba44-b847a790e441:auto
+ScalingGroupName/awseb-e-k2dacer2pc-stack-AWSEBAutoScalingGroup-1W06CZLJO5RC9:policyName/awseb-e-k2dacer2pc-stack-AWSEBAutoScalingScaleUpPolicy-1
+KZQV2GU8NJYN
+INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
+INFO: Deleted Auto Scaling group named: awseb-e-k2dacer2pc-stack-AWSEBAutoScalingGroup-1W06CZLJO5RC9
+INFO: Deleted Auto Scaling launch configuration named: awseb-e-k2dacer2pc-stack-AWSEBAutoScalingLaunchConfiguration-4RUMNRZBWZ3H
+INFO: Deleted security group named: awseb-e-k2dacer2pc-stack-AWSEBSecurityGroup-BTWC17LAF4OD
+INFO: Deleted load balancer named: awseb-e-k-AWSEBLoa-108FQWNOH4VCU
+INFO: Deleting SNS topic for environment Marcus-APP-dev.
+INFO: terminateEnvironment completed successfully.
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>
+
+===================================================================
+Used CLI eb create with --elb-type option
+Supplied "Marcus-APP-dev-env" as the new (ALB) environment name for the now-terminated Marcus-APP-dev
+
+===================================================================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb create Marcus-APP-dev-env --elb-type application
+Creating application version archive "app-171231_214231".
+Uploading: [##################################################] 100% Done...
+ERROR: ServiceError - Configuration validation exception: Invalid option value: 'null' (Namespace: 'aws:ec2:vpc', OptionName: 'Subnets'): Specify
+ the subnets for the VPC for load balancer type application.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>eb list -a
+ClinicalTrials
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus_APP>

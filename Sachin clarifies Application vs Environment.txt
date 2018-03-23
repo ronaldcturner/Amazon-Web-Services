@@ -1,0 +1,255 @@
+(00:51:34) Connecting to server...
+
+(00:51:37) A secure, encrypted connection has been established.
+
+(00:51:43) Your support representative will be with you shortly. This session may be recorded for quality assurance.
+
+(00:51:47) You are now chatting with Sachin A..
+
+(00:51:55) Sachin A. can now only view the customer's screen.
+
+(00:51:59) Sachin A. said to you:
+Hello Ron
+
+(00:52:10) Sachin A. said to you:
+Good evening!
+
+(00:52:17) You said to Sachin A.:
+Hi Sachin. I'll tidy up a bit.
+
+(00:52:48) Sachin A. said to you:
+ok.. :)
+
+(00:54:01) You said to Sachin A.:
+I created a Marcus-APP, which I think has collided with the environment name. I can show you the CLI eb commands.
+
+(00:54:12) Sachin A. said to you:
+Ok..
+
+(00:55:00) You said to Sachin A.:
+The good build is now sitting in the REV5 folder
+
+(00:55:18) Sachin A. said to you:
+From where you copied the code to REV5
+
+(00:55:36) Sachin A. said to you:
+from the file app-xxxxxx or from other directory ?
+
+(00:55:50) Sachin A. said to you:
+ok.
+
+(00:56:26) You said to Sachin A.:
+No. Wait, I moved the downloded .zip into the new directory and THEN unzipped the contents there.
+
+(00:56:41) Sachin A. said to you:
+ok.. Cool
+
+(00:56:56) You said to Sachin A.:
+and here is the new and improved .ebextensions folder!
+
+(00:57:23) Sachin A. said to you:
+ok.. have you made any changes within the file(s) ?
+
+(00:58:29) You said to Sachin A.:
+After the REV5 deploy, I then edited settings.py with the new ALLOWED_HOSTS value. No other changed.
+
+(00:58:43) You said to Sachin A.:
+the app DID deploy properly otherwise.
+
+(00:59:10) Sachin A. said to you:
+on CMD line can you execute command "eb list"
+
+(00:59:55) Sachin A. said to you:
+So whenever you are doing any "eb deploy" those will be applied to REV3
+
+(01:00:05) Sachin A. said to you:
+any changes*
+
+(01:00:34) Sachin A. said to you:
+did you initialize in this new directory REV5 (eb init) ?
+
+(01:00:52) You said to Sachin A.:
+So THAT's the meaing of the "*". Yes, I did init.
+
+(01:01:19) Sachin A. said to you:
+ok..
+
+(01:01:32) Sachin A. said to you:
+Yes.. "*" (Star) indicates the active environment to which the changes will be applied
+
+(01:01:47) You said to Sachin A.:
+Very glad to know that.
+
+(01:03:24) Sachin A. said to you:
+I am also thinking on how to directly pass the beanstalk URL to your settings.py
+
+(01:04:03) Sachin A. said to you:
+May be if we are successful in creating an environment variable then you don't have to manually keep the track of allowed hosts.
+
+(01:04:26) You said to Sachin A.:
+I follow, and that would be wonderful.
+
+(01:04:52) Sachin A. said to you:
+Let me quickly check..
+
+(01:06:39) You said to Sachin A.:
+This is one (terrible) way to make things easy: ALLOWED_HOSTS = ['*'].
+
+(01:07:44) Sachin A. said to you:
+Yes..
+
+(01:08:12) Sachin A. said to you:
+one moment. I am checking few things in my lab environment.
+
+(01:10:51) You said to Sachin A.:
+I think it only takes an "eb use". I did that to change the active environment.
+
+(01:11:11) You said to Sachin A.:
+. . . and am trying another deploy
+
+(01:12:48) Sachin A. said to you:
+Yes..
+
+(01:13:04) Sachin A. said to you:
+"eb use" can be used to switched between environments
+
+(01:13:14) Sachin A. said to you:
+sorry for typos..
+
+(01:13:40) Sachin A. said to you:
+eb list
+
+(01:13:56) You said to Sachin A.:
+IT worked!
+
+(01:15:00) You said to Sachin A.:
+Yes. that works. So I should only have to "use" the right environment.
+
+(01:15:10) Sachin A. said to you:
+Yes..
+
+(01:15:36) Sachin A. said to you:
+before execute "eb deploy" always check the current active environment
+
+(01:16:24) You said to Sachin A.:
+All right. Now I think I can finally do a from-scratch build. But will you help me "kill" this REV5 so that I can start fresh with a name that I really want.
+
+(01:16:41) Sachin A. said to you:
+Sure..
+
+(01:16:51) Sachin A. said to you:
+Ron, can we wait for a min..
+
+(01:17:05) Sachin A. said to you:
+I am trying to create an environment variable
+
+(01:17:19) You said to Sachin A.:
+Sorry I just diverted from the possibility of not having to edit, then re-deploy. I see... I'll follow you.
+
+(01:17:33) Sachin A. said to you:
+With which you don't have to manually track the allowed hosts
+
+(01:17:55) Sachin A. said to you:
+automatically it will just all the CNAME of the beanstalk URL..
+
+(01:18:09) You said to Sachin A.:
+That smells like having to mess with Django, but I'll watch you carefully.
+
+(01:19:39) Sachin A. said to you:
+meanwhile if you have any questions, feel free to post them in chat.. I will try to answer them at the end.
+
+(01:19:50) You said to Sachin A.:
+... which for this one would be Marcus-APP.us-west-2.elasticbeanstalk.com
+
+(01:21:41) You said to Sachin A.:
+I get it (I think). I can predict the CNAME beforehand, based on what I know I will enter for the DNS CNAME prefix, right?
+
+(01:23:21) Sachin A. said to you:
+Yes.. :)
+
+(01:23:48) You said to Sachin A.:
+Got it. It's an editing procedure.... everyting done in order.
+
+(01:25:08) Sachin A. said to you:
+Shall we proceed with creation of the new environment and delete all your old resources ?
+
+(01:25:55) You said to Sachin A.:
+Yes please. And I confess that I ALWAYS get confused with the Web dashboards. But I'll follow.
+
+(01:26:49) Sachin A. said to you:
+no issues.. I  will assist you..
+
+(01:27:27) Sachin A. said to you:
+before we proceed if you have any query related to terminologies such as application, environment etc.. feel free to ask me
+
+(01:28:24) You said to Sachin A.:
+OK, by example, here are the two consoles:
+
+(01:29:38) Sachin A. said to you:
+ok
+
+(01:30:34) You said to Sachin A.:
+"All Applications" will list the applications, of which there are only one (the large font at the tope, right?)
+
+(01:31:44) Sachin A. said to you:
+Let me try to find a screenshot on google to clarify you in better way.. one moment
+
+(01:33:39) Sachin A. said to you:
+https://d1.awsstatic.com/Getting%20Started/update-an-app/Getting-Started-EB2-green_box.f7b981fbc3ac7574f925ca30b2f6cc9022ae6c53.png
+
+(01:33:45) Sachin A. said to you:
+can you pls open this link..
+
+(01:34:20) Sachin A. said to you:
+I think you have to copy and paste directely in browser
+
+(01:35:05) Sachin A. said to you:
+Here there are TWO application. 
+1. "My First Beastic beanstalk
+2. PHP-Sample-app
+
+(01:35:07) You said to Sachin A.:
+Got it.
+
+(01:35:26) Sachin A. said to you:
+1st application has ZERO environments in it
+
+(01:35:52) Sachin A. said to you:
+where as application php-sample-app has ONE environment in it.
+
+(01:36:39) Sachin A. said to you:
+In short, An application is container of environments..
+
+(01:37:19) Sachin A. said to you:
+Here usually our customer have xyz-test, xyz-staging, xyz-prod
+
+(01:37:30) Sachin A. said to you:
+under a single application "xyz"
+
+(01:37:38) You said to Sachin A.:
+THAT'S where I've been stubbornly dense. I thought that applications were INSIDE environments
+
+(01:38:03) You said to Sachin A.:
+VERY nice "best practices"
+
+(01:38:31) Sachin A. said to you:
+hope that clarifies your query on apps and env's
+
+(01:39:11) You said to Sachin A.:
+I'm pointed in the right direction and will study further. I'll capture your dialogue and come back to it.
+
+(01:40:39) Sachin A. said to you:
+One important point.. 
+You should always plan to design your application to handle failures.
+
+(01:41:22) Sachin A. said to you:
+Say, if the underlying hardware goes wrong.. then auto scaling will replace the faulty instance with a new one.. (all the day will be wiped)
+
+(01:42:34) You said to Sachin A.:
+I have the long list of references that came when I chose auto-scaling. I have yet to get to that.
+
+(01:42:35) Sachin A. said to you:
+So you have to store the data either on a DB (AWS RDS), Dynamo DB or S3..
+
+(01:44:48) You said to Sachin A.:
+I see. And I'll pursue. This demystifies a lot of the "magic" that I've never understood about the cloud. It also gives us a lot of confidence in providing fail-over for critical cloud apps..... all under our control.

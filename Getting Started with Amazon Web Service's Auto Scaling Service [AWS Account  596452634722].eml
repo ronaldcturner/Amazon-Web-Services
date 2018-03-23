@@ -1,0 +1,120 @@
+Return-Path: <20171202052307581c1570563e464fa99740e3ea00p0na@bounces.amazon.com>
+Delivered-To: ront@soph-ware.com
+Received: from bospopproxy02.eigbox.net ([10.20.15.12])
+	by bospop04.eigbox.net with LMTP id OIRsHb84IlonGgAAMdFe1A
+	for <ront@soph-ware.com>; Sat, 02 Dec 2017 00:23:11 -0500
+Received: from bosmailscan12.eigbox.net ([10.20.15.12])
+	by bospopproxy02.eigbox.net with LMTP id 8Dg8Hb84IlrGXgAAcg53ZQ
+	; Sat, 02 Dec 2017 00:23:11 -0500
+Return-path: <20171202052307581c1570563e464fa99740e3ea00p0na@bounces.amazon.com>
+Envelope-to: ront@soph-ware.com
+Delivery-date: Sat, 02 Dec 2017 00:23:11 -0500
+Received: from [10.115.3.14] (helo=smtp.maileig.com)
+	by bosmailscan12.eigbox.net with esmtp (Exim)
+	id 1eL0Gd-0006fK-CE
+	for ront@soph-ware.com; Sat, 02 Dec 2017 00:23:11 -0500
+Received: from a13-16.smtp-out.amazonses.com ([54.240.13.16])
+	by bosimpinc14 with bizsmtp
+	id gtP81w00A0Lmz8e01tP9kk; Sat, 02 Dec 2017 00:23:09 -0500
+X-EN-OrigIP: 54.240.13.16
+X-EN-IMPSID: gtP81w00A0Lmz8e01tP9kk
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=yg4mwqurec7fkhzutopddd3ytuaqrvuz; d=amazon.com; t=1512192187;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date;
+	bh=4/uE7+wYCAOE3G8H+BHFHVRI4sHgb89uVzXtkg1zVkI=;
+	b=FbedDvG8GvwCj6bXobczL+rLUw7Y5PdGekfRkPqF2AfUZhquZi3gYXuUNhcbzVRa
+	t/ycvE/0Sfyotj29fSv4rn7QZ8Hr0wa1CSAhm78kBz1B8pKQnbwSLTN2sT8Wkm+4a5h
+	NL8n/1sQa93DtRU/T9Zka6p3DOLQRdlzCG0E+gBU=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1512192187;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date:Feedback-ID;
+	bh=4/uE7+wYCAOE3G8H+BHFHVRI4sHgb89uVzXtkg1zVkI=;
+	b=Ye0roUPVUXXkodc66BYVhd4zsAoguQ822RUHk8M0iLM+n3JYTcn9sVUGnXcCxw2W
+	W62XtbVGFhiIbI6KaM7vWzDAu/cQ1qevlpsPUThQo1tMToPJPmjuvX4bnc8GqOZSUVb
+	fFGNscJ9aULVWg/d/aBIhD+sE0O6CXI9OCVCBmEY=
+From: "Amazon Web Services, Inc." <no-reply-aws@amazon.com>
+To: ront@soph-ware.com
+Message-ID: <0100016015ad9b79-e7c571e1-b2bb-458f-ab2c-70ff53af6e64-000000@email.amazonses.com>
+Subject: Getting Started with Amazon Web Service's Auto Scaling Service [AWS
+ Account: 596452634722]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_169950_1909010913.1512192187270"
+X-AMAZON-MAIL-RELAY-TYPE: notification
+Bounces-to: 20171202052307581c1570563e464fa99740e3ea00p0na@bounces.amazon.com
+X-AMAZON-METADATA: CA=C1CN9FUGPTPOG2-CU=A3L71IHZUGWGDR-RI=A3LTVW487ETSID
+X-SM-COMMUNICATION: true
+X-Original-MessageID: <urn.rtn.msg.20171202052307581c1570563e464fa99740e3ea00p0na@1512192187270.rtn-svc-na-back-m4l1a-2ee2ef99.us-east-1.amazon.com>
+Date: Sat, 2 Dec 2017 05:23:07 +0000
+X-SES-Outgoing: 2017.12.02-54.240.13.16
+Feedback-ID: 1.us-east-1.ZHcGJK6s+x+i9lRHKog4RW3tECwWIf1xzTYCZyUaiec=:AmazonSES
+
+------=_Part_169950_1909010913.1512192187270
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+Thank you for activating Amazon Web Service's Auto Scaling service. We would like to help you get started.  We have put together a few resources that we think will be useful to you as you familiarize yourself with the Auto Scaling service.
+
+We have a selection of resources on our web page to help get you started including blogs, tutorials, and videos:
+http://aws.amazon.com/autoscaling/getting-started/
+
+Auto Scaling helps you to manage the lifecycle of your EC2 instances by automating launches, software configuration, and replacement of impaired instances. Check out this blog post to learn more:
+http://aws.amazon.com/blogs/compute/fleet-management-made-easy-with-auto-scaling/
+
+Auto Scaling can also ensure that your provisioned capacity matches the load on your application by dynamically scaling your number of instances up and down. Capacity can be scaled on a schedule, or according to rules based on CloudWatch metrics.
+
+Scaling on a schedule is the simplest form of dynamic scaling, and works best if your application has predictable load characteristics:
+http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html
+
+Scaling based on CloudWatch metrics is more flexible because it reacts dynamically to changes in application load. We recommend using Step Scaling policies when scaling based on CloudWatch metrics.
+
+Introduction to Step Policies:
+http://aws.amazon.com/blogs/aws/auto-scaling-update-new-scaling-policies-for-more-responsive-scaling/
+
+Differences Between Dynamic Scaling Policies:
+http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html
+
+Here are some helpful tutorials to help you through the first steps of setting up Auto Scaling:
+
+Creating your first Auto Scaling Group:
+http://docs.aws.amazon.com/autoscaling/latest/userguide/GettingStartedTutorial.html
+
+Planning your Auto Scaling Group:
+http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html
+
+Creating a Load Balanced Auto Scaling Group:
+http://docs.aws.amazon.com/autoscaling/latest/userguide/as-register-lbs-with-asg.html
+
+Here are some additional features of Auto Scaling that may help you with your deployment:
+
+Auto Scaling can automatically replace instances that fail regular Health Checks:
+http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html
+
+Lifecycle hooks give you control over what happens when Auto Scaling launches or terminates instances:
+http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/introducing-lifecycle-hooks.html
+
+Here is a blog post that illustrates a practical application of lifecycle hooks:
+http://aws.amazon.com/blogs/compute/building-a-backup-system-for-scaled-instances-using-aws-lambda-and-amazon-ec2-run-command/
+
+Other actions such as attaching, detaching, and temporarily removing instances from Auto Scaling:
+http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WorkingWithASG.html
+
+Finally, did you know that Auto Scaling works with more than just EC2 instances? This is called Application Auto Scaling, and you can learn more about it here:
+http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/Welcome.html
+
+These blog posts describe how Application Auto Scaling is used by various AWS services:
+http://aws.amazon.com/blogs/compute/automatic-scaling-with-amazon-ecs/
+http://aws.amazon.com/blogs/aws/new-auto-scaling-for-ec2-spot-fleets/
+http://aws.amazon.com/blogs/aws/new-auto-scaling-for-emr-clusters/
+
+We hope these resources will answer your questions and help you get started using Amazon Auto Scaling. If you have additional questions or concerns, please reach out to us on the AWS EC2 forum: https://forums.aws.amazon.com/forum.jspa?forumID=30
+
+For Premium Support subscribers, please open a support case: https://console.aws.amazon.com/support/home?#/case/create
+
+Regards,
+The AWS Auto Scaling Team
+
+Amazon Web Services, Inc. is a subsidiary of Amazon.com, Inc. Amazon.com is a registered trademark of Amazon.com, Inc. This message was produced and distributed by Amazon Web Services Inc., 410 Terry Ave. North, Seattle, WA 98109-5210
+------=_Part_169950_1909010913.1512192187270--

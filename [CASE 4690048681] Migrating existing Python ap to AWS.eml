@@ -1,0 +1,106 @@
+Return-Path: <2017121822283473a24d38cd9b41f98e738053d5f0p0na@bounces.amazon.com>
+Delivered-To: ront@soph-ware.com
+Received: from bospopproxy04.eigbox.net ([10.20.15.8])
+	by bospop04.eigbox.net with LMTP id aHftGRZBOFp6KAAAMdFe1A
+	for <ront@soph-ware.com>; Mon, 18 Dec 2017 17:28:38 -0500
+Received: from bosmailscan08.eigbox.net ([10.20.15.8])
+	by bospopproxy04.eigbox.net with LMTP id CAGwGRZBOFqAEQAA9X5zqQ
+	; Mon, 18 Dec 2017 17:28:38 -0500
+Return-path: <2017121822283473a24d38cd9b41f98e738053d5f0p0na@bounces.amazon.com>
+Envelope-to: ront@soph-ware.com
+Delivery-date: Mon, 18 Dec 2017 17:28:38 -0500
+Received: from [10.115.3.13] (helo=smtp.maileig.com)
+	by bosmailscan08.eigbox.net with esmtp (Exim)
+	id 1eR3tm-0003Xd-AQ
+	for ront@soph-ware.com; Mon, 18 Dec 2017 17:28:38 -0500
+Received: from a13-9.smtp-out.amazonses.com ([54.240.13.9])
+	by bosimpinc13 with bizsmtp
+	id naUc1w00C0BjGmm01aUdzx; Mon, 18 Dec 2017 17:28:37 -0500
+X-EN-OrigIP: 54.240.13.9
+X-EN-IMPSID: naUc1w00C0BjGmm01aUdzx
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=yg4mwqurec7fkhzutopddd3ytuaqrvuz; d=amazon.com; t=1513636115;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=FjjJ9pIZfzY+JHmO1N69WXDDz3kwjsUJmvhvWsFHfmI=;
+	b=RxcHgeEzxS/fwTuWYiy/LZPuShB0GczzWay4eTramsLptO4OcdPUXDjfwhn6CkKw
+	33Ha86n/yAPf34GI6KMiIqVsY4UW+ASwGSI7E5SvXzyAGvlq/Ay6Y0PGs7bVlpTAiAR
+	+pVu9erUsL1qaPuNxIWYORub48iDp02WHe8WfHAg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1513636115;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=FjjJ9pIZfzY+JHmO1N69WXDDz3kwjsUJmvhvWsFHfmI=;
+	b=ZbyX1byl8J/2roBuafj4qvzMZeFBn4emJoEldARmJQgJrRIUmRhCkz/0B3A1pVP7
+	n9rfkhToHNKOU3jHrNj0kYOyILp7B6O5H2P2Yr7pVRn1V8YGNk1OtndJw2XRodquwW1
+	wpiuca/p5f7/zSualE9lPzezbuoS1CqrXcSCPA2A=
+Date: Mon, 18 Dec 2017 22:28:34 +0000
+From: "no-reply-aws@amazon.com" <no-reply-aws@amazon.com>
+To: "ront@soph-ware.com" <ront@soph-ware.com>
+Message-ID: <010001606bbe31ed-585bffab-8270-4ef5-afbe-361711564187-000000@email.amazonses.com>
+Subject: RE:[CASE 4690048681] Migrating existing Python ap to AWS
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_7993743_754561259.1513636114859"
+X-AMAZON-RTE-VERSION: 2.0
+X-AMAZON-METADATA: RI=A3LTVW487ETSID
+Bounces-to: 2017121822283473a24d38cd9b41f98e738053d5f0p0na@bounces.amazon.com
+X-AMAZON-MAIL-RELAY-TYPE: notification
+X-Original-MessageID: <urn.correios.msg.2017121822283473a24d38cd9b41f98e738053d5f0p0na@1513636114862.rte-svc-m4c-be05c7ea.us-east-1.amazon.com>
+X-SES-Outgoing: 2017.12.18-54.240.13.9
+Feedback-ID: 1.us-east-1.ZHcGJK6s+x+i9lRHKog4RW3tECwWIf1xzTYCZyUaiec=:AmazonSES
+
+------=_Part_7993743_754561259.1513636114859
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Hello Ron,
+
+Thank you for contacting AWS Premium Support. This is a follow-up from our chat earlier.
+
+The initial issue we were faced with was with getting the github repository updated with the latest folders and files in your application. We had to run the 'git add -A' command and then the 'git commit -am' command to get the latest files in the repository. Once that was addressed, we had an issue with not being able to find the 'ebdjango/wsgi.py' file not being found. 
+
+To eliminate an issue with misconfiguration of the current environment we created a new one . We ran into the same issue with it. After quit a bit of time trying to figure why this was not finding file when it was clearly on the instance we went back to looking at the basics. So, in reviewing the .ebextensions directory I realized the 'django.conf' file should be named 'django.config'. [1] We updated the name and redeployed and it was successful. 
+
+You can add AWS Elastic Beanstalk configuration files (.ebextensions) to your web application's source code to configure your environment and customize the AWS resources that it contains. Configuration files are YAML formatted documents with a .config file extension that you place in a folder named .ebextensions and deploy in your application source bundle. 
+
+Now you're seeing errors on the application side which I am not going to be of great assistance with as I'm not a programmer.
+
+It took a while to get through the various stages but we eventually got you up and running so that you can get back to what you do best. At this point you can coordinate with the programmers to work on the application side of things.
+
+You can now go back to the other environment, rename the 'ebdjango.conf' to 'ebdjango.config' and it should come up as well.
+
+Thank you for your patience. I've resolved the case on your behalf. Feel free to reach out to us again if we can provide some assistance.
+
+Have a nice rest of your week.
+
+.:| LINKS |:.
+
+[1] Advanced Environment Customization with Configuration Files (.ebextensions) 
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html
+
+
+Best regards,
+
+Marcus H.
+Amazon Web Services
+
+Check out the AWS Support Knowledge Center, a knowledge base of articles and videos that answer customer questions about AWS services: https://aws.amazon.com/premiumsupport/knowledge-center/?icmpid=support_email_category
+
+We value your feedback. Please rate my response using the link below.
+===================================================
+
+To contact us again about this case, please return to the AWS Support Center using the following URL:
+
+https://console.aws.amazon.com/support/home#/case/?displayId=4690048681&language=en
+
+(If you are connecting by federation, log in before following the link.)
+
+*Please note: this e-mail was sent from an address that cannot accept incoming e-mail. Please use the link above if you need to contact us again about this same issue.
+
+====================================================================
+Learn to work with the AWS Cloud. Get started with free online videos and self-paced labs at 
+http://aws.amazon.com/training/
+====================================================================
+
+Amazon Web Services, Inc. is an affiliate of Amazon.com, Inc. Amazon.com is a registered trademark of Amazon.com, Inc. or its affiliates.
+------=_Part_7993743_754561259.1513636114859--

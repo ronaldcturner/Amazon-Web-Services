@@ -1,0 +1,19 @@
+
+
+Live Chat (Case ID - 4781638551)
+End Chat
+You are now connected to Luis from AWS. Please type your question below.
+Me:Regarding case 4781638551
+Luis:Hi Ron, my name is Luis. I'm here to help you today.
+I'm reading over your correspondence as we speak
+Me:(Take your time with the note I sent.)You saw from my post that I have only a general (exec-level) question about next steps for SCALABILITY of our application. I suspect that you'll recommend Enterprise-level support.
+Luis:Thank you for waiting Ron. As far as application scalability, EB does have autoscaling enabled by default which can be triggered by measurement of when a metric exceeds a certain threshold. The key thing to understand is how your application will react to certain loads, which can help shed some light on how to adjust the scaling policies
+Now, while enterprise-level support will provide you with more of a white-glove type of support experience, where you will be assigned a Technical Account Manager and can consult with a Solutions Architect. Load testing will be a good step before jumping right into getting the next tier of support
+Me:OK. So I think our next logical step is to create an isolated working "sandbox" for our customer's application. From that we'll be able to harvest the metrics needed for sensible load testing. The complicating factor is our application itself...... lots of live messaging between the cloud and our Web site.
+If that sounds good to you, I'll capture this exchange and pass it along to our customer and the rest of our mgt.
+Luis:Sure, that's fine. This is one of the key things I sometimes see with customer application scalability. Scenarios where not understanding how the app behaves under load can lead to detrimental results.
+did you have any other questions at this time for me?
+Me:No I don't. And with this exchange you have provided us some platinum-level consulting .... exactly what we need at this point. And once again, you've proven the quality of AWS support. Thank you. (We can close the case. Just let me capture and store the exchange.)
+Luis:My pleasure Ron. I'll give you some time to capture this and will close the case. Thank you for contacting AWS support. Have a great rest of your day
+	
+Luis from AWS is Online

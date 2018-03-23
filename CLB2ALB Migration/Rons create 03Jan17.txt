@@ -1,0 +1,390 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\RonT>cd "C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2"
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets subnet-2b924962,subnet-9aea6bfd --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): Marcus-APP-VPC
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC):
+That cname is not available. Please choose another.
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC): Marcus-APP-VPC-REV2
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180103_103802".
+Uploading: [##################################################] 100% Done...
+An environment with that name already exists.
+Enter Environment Name
+(default is Marcus-APP-VPC2):
+Environment details for: Marcus-APP-VPC2
+  Application name: Marcus_APP
+  Region: us-west-2
+  Deployed Version: app-180103_103802
+  Environment ID: e-936cdcnzzw
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.1
+  Tier: WebServer-Standard-1.0
+  CNAME: Marcus-APP-VPC-REV2.us-west-2.elasticbeanstalk.com
+  Updated: 2018-01-03 18:40:10.628000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2:596452634722:targetgroup/awseb-AWSEB-38MHE4937813/46fa1bcd4c99143f
+INFO: Created security group named: sg-ab1e4fd7
+INFO: Created security group named: sg-1b1a4b67
+INFO: Created Auto Scaling launch configuration named: awseb-e-936cdcnzzw-stack-AWSEBAutoScalingLaunchConfiguration-PPTZANN7YK5L
+INFO: Created Auto Scaling group named: awseb-e-936cdcnzzw-stack-AWSEBAutoScalingGroup-V8RWFYWCWHIC
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:a660c7ce-3c5a-4b8a-8b11-84661495fadf:auto
+ScalingGroupName/awseb-e-936cdcnzzw-stack-AWSEBAutoScalingGroup-V8RWFYWCWHIC:policyName/awseb-e-936cdcnzzw-stack-AWSEBAutoScalingScaleDownPolicy-
+D8B3WGV8JKXE
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:982a0acb-d796-4af2-afef-8de3ba1c11e2:auto
+ScalingGroupName/awseb-e-936cdcnzzw-stack-AWSEBAutoScalingGroup-V8RWFYWCWHIC:policyName/awseb-e-936cdcnzzw-stack-AWSEBAutoScalingScaleUpPolicy-S4
+N1FCKOAN73
+INFO: Created CloudWatch alarm named: awseb-e-936cdcnzzw-stack-AWSEBCloudwatchAlarmLow-1OBHUG7UEIRDZ
+INFO: Created CloudWatch alarm named: awseb-e-936cdcnzzw-stack-AWSEBCloudwatchAlarmHigh-PTX4KXDVRN3L
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2:596452634722:loadbalancer/app/awseb-AWSEB-1G2DW0AMHEEM9/9576f8784083cfc
+d
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2:596452634722:listener/app/awseb-AWSEB-1G2DW0AMHEEM9/9576f87840
+83cfcd/3c85edfc79820059
+INFO: Successfully launched environment: Marcus-APP-VPC2
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+Marcus-APP-VPC2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>
+========================================================================
+Launched properly with this URI:
+http://marcus-app-vpc-rev2.us-west-2.elasticbeanstalk.com/
+
+App error: Disallowed host:
+Invalid HTTP_HOST header: 'marcus-app-vpc-rev2.us-west-2.elasticbeanstalk.com'. You may need to add 'marcus-app-vpc-rev2.us-west-2.elasticbeanstalk.com' to ALLOWED_HOSTS.
+
+App-side edit in C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2\ebdjango\settings.py:
+
+ALLOWED_HOSTS = [('django-env.hwbskvjbpc.us-west-2.elasticbeanstalk.com'),
+                  ('127.0.0.1'),
+                  ('marcus-app-vpc-rev2.us-west-2.elasticbeanstalk.com')]
+=========================================================================
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+Marcus-APP-VPC2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb deploy
+Creating application version archive "app-180103_110655".
+Uploading: [##################################################] 100% Done...
+ERROR: InvalidParameterValueError - Environment named Marcus-APP-VPC is in an invalid state for this operation. Must be Ready.
+============================================================================
+[Terminated Environments named Marcus-APP-VPC and Marcus-APP-VPC2. Re-ran create:]
+=============================================================================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+Marcus-APP-VPC2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb deploy
+Creating application version archive "app-180103_110655".
+Uploading: [##################################################] 100% Done...
+ERROR: InvalidParameterValueError - Environment named Marcus-APP-VPC is in an invalid state for this operation. Must be Ready.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb deploy
+Creating application version archive "app-180103_111308".
+Uploading: [##################################################] 100% Done...
+ERROR: InvalidParameterValueError - Environment named Marcus-APP-VPC is in an invalid state for this operation. Must be Ready.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+Marcus-APP-VPC2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets
+ subnet-2b924962,subnet-9aea6bfd --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): Marcus-APP-VPC3
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC3):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180103_112204".
+Uploading: [##################################################] 100% Done...
+Environment details for: Marcus-APP-VPC3
+  Application name: Marcus_APP
+  Region: us-west-2
+  Deployed Version: app-180103_112204
+  Environment ID: e-dgmwn3u3iq
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.1
+  Tier: WebServer-Standard-1.0
+  CNAME: Marcus-APP-VPC3.us-west-2.elasticbeanstalk.com
+  Updated: 2018-01-03 19:23:22.307000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2:596452634722:targetgroup/awseb-AWSEB-18L0J8OMACRUA/ba2254bbce947d54
+INFO: Created security group named: sg-ba2273c6
+INFO: Created security group named: sg-882574f4
+INFO: Created Auto Scaling launch configuration named: awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingLaunchConfiguration-IC28KSG0IYBQ
+INFO: Created Auto Scaling group named: awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingGroup-1HF22HRY2S5PU
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:f5720378-9b3b-41eb-9414-d2e79e16e17e:auto
+ScalingGroupName/awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingGroup-1HF22HRY2S5PU:policyName/awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingScaleDownPolicy
+-1JHKDY9YH2YHR
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:1c0273ba-c5db-4e84-9885-36f93bf968e0:auto
+ScalingGroupName/awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingGroup-1HF22HRY2S5PU:policyName/awseb-e-dgmwn3u3iq-stack-AWSEBAutoScalingScaleUpPolicy-6
+INIIXNXWP9F
+INFO: Created CloudWatch alarm named: awseb-e-dgmwn3u3iq-stack-AWSEBCloudwatchAlarmLow-6T95Z95S0QUO
+INFO: Created CloudWatch alarm named: awseb-e-dgmwn3u3iq-stack-AWSEBCloudwatchAlarmHigh-L51TNPPNT0XC
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2:596452634722:loadbalancer/app/awseb-AWSEB-1D35X9GO06HPH/c72948522ca854d
+6
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2:596452634722:listener/app/awseb-AWSEB-1D35X9GO06HPH/c72948522c
+a854d6/743ad9e6d9f7ddef
+INFO: Successfully launched environment: Marcus-APP-VPC3
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+Marcus-APP-VPC2
+Marcus-APP-VPC3
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>
+==============================================================================
+Used the CLI to terminate all the environments, then re-ran the above verbatim:
+==============================================================================
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb init --interactive
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3): 3
+
+Select an application to use
+1) Marcus_APP
+2) ClinicalTrials_AWS
+3) [ Create new Application ]
+(default is 3): 1
+
+It appears you are using Python. Is this correct?
+(Y/n): Y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1):
+Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+Do you want to set up SSH for your instances?
+(Y/n): Y
+
+Select a keypair.
+1) 09DecKeyPair
+2) 10Dec17KeyPair
+3) AWS-KeyPair
+4) ronskey
+5) [ Create new KeyPair ]
+(default is 4): 2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets
+ subnet-2b924962,subnet-9aea6bfd --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): Marcus-APP-VPC
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC): Marcus-APP-VPC-REV2
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180103_123848".
+Uploading: [##################################################] 100% Done...
+Environment details for: Marcus-APP-VPC
+  Application name: Marcus_APP
+  Region: us-west-2
+  Deployed Version: app-180103_123848
+  Environment ID: e-yyrvuavapy
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.1
+  Tier: WebServer-Standard-1.0
+  CNAME: Marcus-APP-VPC-REV2.us-west-2.elasticbeanstalk.com
+  Updated: 2018-01-03 20:40:05.404000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created security group named: sg-6060311c
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2:596452634722:targetgroup/awseb-AWSEB-1RKAIEDPI6FZF/f0d5c25ea982175a
+INFO: Created security group named: sg-ab6534d7
+INFO: Created Auto Scaling launch configuration named: awseb-e-yyrvuavapy-stack-AWSEBAutoScalingLaunchConfiguration-FW6PG1XX0Y1K
+INFO: Created Auto Scaling group named: awseb-e-yyrvuavapy-stack-AWSEBAutoScalingGroup-ICEQLIU37S1S
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:2c842050-bd4e-4c5a-8f4e-ae7f419c7832:auto
+ScalingGroupName/awseb-e-yyrvuavapy-stack-AWSEBAutoScalingGroup-ICEQLIU37S1S:policyName/awseb-e-yyrvuavapy-stack-AWSEBAutoScalingScaleUpPolicy-DC
+J82P9EF3IU
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:eaafa82a-3025-4a4a-bc22-d84bb1cb75e2:auto
+ScalingGroupName/awseb-e-yyrvuavapy-stack-AWSEBAutoScalingGroup-ICEQLIU37S1S:policyName/awseb-e-yyrvuavapy-stack-AWSEBAutoScalingScaleDownPolicy-
+ED70T4TH5I72
+INFO: Created CloudWatch alarm named: awseb-e-yyrvuavapy-stack-AWSEBCloudwatchAlarmHigh-1I1CYPO6MYV8D
+INFO: Created CloudWatch alarm named: awseb-e-yyrvuavapy-stack-AWSEBCloudwatchAlarmLow-1ITM84J73EZP
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2:596452634722:loadbalancer/app/awseb-AWSEB-11P1AWQZGNTK4/ae6def88df52cd7
+2
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2:596452634722:listener/app/awseb-AWSEB-11P1AWQZGNTK4/ae6def88df
+52cd72/a0bd7b8594538fe7
+INFO: Successfully launched environment: Marcus-APP-VPC
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>eb list
+* Marcus-APP-VPC
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV2>
+
+=====================================================================
+Did another from-scratch rebuild:
+=====================================================================
+C:\XpressRules\Python\OpenShift\XpressRules Apps>cd "C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3"
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>eb list
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>eb init --interactive
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Ohio)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3): 3
+
+Select an application to use
+1) Marcus_APP
+2) ClinicalTrials_AWS
+3) [ Create new Application ]
+(default is 3): 1
+
+It appears you are using Python. Is this correct?
+(Y/n): y
+
+Select a platform version.
+1) Python 3.6
+2) Python 3.4
+3) Python
+4) Python 2.7
+5) Python 3.4 (Preconfigured - Docker)
+(default is 1): 1
+Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+Do you want to set up SSH for your instances?
+(Y/n): y
+
+Select a keypair.
+1) 09DecKeyPair
+2) 10Dec17KeyPair
+3) AWS-KeyPair
+4) ronskey
+5) [ Create new KeyPair ]
+(default is 4): 2
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>eb list
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>eb create -i t2.micro --vpc.id vpc-966806f1 --vpc.elbpublic --vpc.ec2subnets
+ subnet-2b924962,subnet-9aea6bfd --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): Marcus-APP-VPC-REV3
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC-REV3): Marcus-APP-VPC-REV3
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180103_133512".
+Uploading: [##################################################] 100% Done...
+Environment details for: Marcus-APP-VPC-REV3
+  Application name: Marcus_APP
+  Region: us-west-2
+  Deployed Version: app-180103_133512
+  Environment ID: e-zhxmyvid7w
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.1
+  Tier: WebServer-Standard-1.0
+  CNAME: Marcus-APP-VPC-REV3.us-west-2.elasticbeanstalk.com
+  Updated: 2018-01-03 21:36:30.204000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2:596452634722:targetgroup/awseb-AWSEB-LAYMTF6PUYKS/e126f0725de23d28
+INFO: Created security group named: sg-86b0e1fa
+INFO: Created security group named: sg-dbb0e1a7
+INFO: Created Auto Scaling launch configuration named: awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingLaunchConfiguration-EG6MXD3UCDSR
+INFO: Created Auto Scaling group named: awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingGroup-16KLFUFIC92GM
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:d7819608-c553-4402-a307-d630d6309006:auto
+ScalingGroupName/awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingGroup-16KLFUFIC92GM:policyName/awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingScaleDownPolicy
+-BNVDY08XECA7
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:116c61c7-cdf3-4ee6-b1a3-4637fb66000b:auto
+ScalingGroupName/awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingGroup-16KLFUFIC92GM:policyName/awseb-e-zhxmyvid7w-stack-AWSEBAutoScalingScaleUpPolicy-1
+MCW52TKDK2HU
+INFO: Created CloudWatch alarm named: awseb-e-zhxmyvid7w-stack-AWSEBCloudwatchAlarmLow-HGIWMS3E8ROJ
+INFO: Created CloudWatch alarm named: awseb-e-zhxmyvid7w-stack-AWSEBCloudwatchAlarmHigh-JO9MBBXBW4M5
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2:596452634722:loadbalancer/app/awseb-AWSEB-LF8BEPR3LHT5/60c6be13ff78733d
+
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2:596452634722:listener/app/awseb-AWSEB-LF8BEPR3LHT5/60c6be13ff7
+8733d/39544975812496ea
+INFO: Successfully launched environment: Marcus-APP-VPC-REV3
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>eb list
+* Marcus-APP-VPC-REV3
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\Marcus-App-VPC-REV3>
+
+=================================================================
+Launched app successfully with this URI:
+http://marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com/
+
+Luckily the ALLOWED_HOSTS in settings.py matched the host's header this time:
+
+ALLOWED_HOSTS = [('django-env.hwbskvjbpc.us-west-2.elasticbeanstalk.com'),
+                  ('127.0.0.1'),
+                  ('marcus-app-vpc-rev3.us-west-2.elasticbeanstalk.com')]
+                  
+This matches the value of CNAME appearing in the build log above.
+
+Then 

@@ -1,0 +1,54 @@
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC> eb create -i t2.micro --vpc.id vpc-e00db887 --vpc.elbpublic --vpc.ec2subnets subnet-f2570aaa,subnet-204d1d0a --vpc.publicip
+Enter Environment Name
+(default is Marcus-APP-dev): Marcus-APP-VPC
+Enter DNS CNAME prefix
+(default is Marcus-APP-VPC):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 2
+Creating application version archive "app-180102_100330".
+Uploading Marcus-APP/app-180102_100330.zip to S3. This may take a while.
+Upload Complete.
+Environment details for: Marcus-APP-VPC
+  Application name: Marcus-APP
+  Region: us-west-2
+  Deployed Version: app-180102_100330
+  Environment ID: e-xxxxxxxx
+  Platform: arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.6 running on 64bit Amazon Linux/2.6.1
+  Tier: WebServer-Standard-1.0
+  CNAME: Marcus-APP-VPC.us-east-1.elasticbeanstalk.com
+  Updated: 2018-01-02 04:33:36.376000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-xxxxxxxxx as Amazon S3 storage bucket for environment data.
+INFO: Created target group named: arn:aws:elasticloadbalancing:us-west-2-xxxxxxxxx:targetgroup/awseb-AWSEB-LWABYPX1Z5BX/347c8ebb8e90d17a
+INFO: Created security group named: sg-a16ba0d5
+INFO: Created security group named: sg-fd61aa89
+INFO: Created Auto Scaling launch configuration named: awseb-e-8td542srcp-stack-AWSEBAutoScalingLaunchConfiguration-12KP9F77221BM
+INFO: Created Auto Scaling group named: awseb-e-8td542srcp-stack-AWSEBAutoScalingGroup-Y3XASKKU1KQL
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2-xxxxxxxxx:scalingPolicy:75f9f478-4dd3-4b46-add1-47683bfeeb5d:autoScalingGroupName/awseb-e-8td542srcp-stack-AWSEBAutoScalingGroup-Y3XASKKU1KQL:policyName/awseb-e-8td542srcp-stack-AWSEBAutoScalingScaleUpPolicy-19HMZOF4PU3YV
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2-xxxxxxxxx:scalingPolicy:811b194c-8f8e-4b5d-baa4-5dffb73c9b92:autoScalingGroupName/awseb-e-8td542srcp-stack-AWSEBAutoScalingGroup-Y3XASKKU1KQL:policyName/awseb-e-8td542srcp-stack-AWSEBAutoScalingScaleDownPolicy-1VQG686PYQSR0
+INFO: Created CloudWatch alarm named: awseb-e-8td542srcp-stack-AWSEBCloudwatchAlarmHigh-9DNK91RAH4P5
+INFO: Created CloudWatch alarm named: awseb-e-8td542srcp-stack-AWSEBCloudwatchAlarmLow-PTLCLJ8T9FBI
+INFO: Created load balancer named: arn:aws:elasticloadbalancing:us-west-2-xxxxxxxxx:loadbalancer/app/awseb-AWSEB-1A2DOY9SJIDVM/9efe892a2ab8372e
+INFO: Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-west-2-xxxxxxxxx:listener/app/awseb-AWSEB-1A2DOY9SJIDVM/9efe892a2ab8372e/19b4cd9009a2dea9
+INFO: Successfully launched environment: Marcus-APP-VPC
+
+- To list the environments:
+
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC> eb list
+Marcus-APP-VPC
+* Marcus-APP-classic
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC>
+
+- For any further modification you can use "eb use" to choose environment.
+
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC> eb use Marcus-APP-VPC
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC> eb list
+* Marcus-APP-VPC
+Marcus-APP-classic
+u480fcf414420582c4c2a /t/e/Marcus-APP-VPC> 

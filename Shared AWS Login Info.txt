@@ -1,0 +1,14 @@
+12/11/17:
+Public DNS:		ec2-34-216-194-166.us-west-2.compute.amazonaws.com
+Host name:		ec2-user@ec2-34-216-194-166.us-west-2.compute.amazonaws.com
+Private key:	[browse to local directory]
+
+
+ec2: 12/12/17:
+Public DNS:		ec2-52-10-144-118.us-west-2.compute.amazonaws.com
+Host name:		ec2-user@ec2-52-10-144-118.us-west-2.compute.amazonaws.com
+Private key:	[browse to local directory]
+
+clinicaltrialsAws-env 12/12/17:
+
+Public DNS:		ec2-54-212-122-177.us-west-2.compute.amazonaws.com	

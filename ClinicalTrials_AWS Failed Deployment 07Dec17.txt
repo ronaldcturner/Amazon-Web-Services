@@ -1,0 +1,73 @@
+C:\XpressRules\Python\OpenShift\XpressRules Apps\lillypolicystudio\compile\dynatree\PolicyNeo4j>cd "C:\XpressRules\Python\OpenShift\XpressRules A
+pps\ClinicalTrials_AWS"
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb terminate
+The environment "django-env" and all associated instances will be terminated.
+To confirm, type the environment name: django-env
+INFO: terminateEnvironment is starting.
+INFO: Environment health has transitioned from Ok to Info. Terminate in progress (running for 3 seconds).
+INFO: Deleted CloudWatch alarm named: awseb-e-2tprzipnmm-stack-AWSEBCloudwatchAlarmHigh-B6F2IBNZQQUR
+INFO: Deleted CloudWatch alarm named: awseb-e-2tprzipnmm-stack-AWSEBCloudwatchAlarmLow-12YQW7HQX0ST1
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:c8f381a7-7f30-41f3-b1bc-6766edcff63e:auto
+ScalingGroupName/awseb-e-2tprzipnmm-stack-AWSEBAutoScalingGroup-7V8ISENTDJKH:policyName/awseb-e-2tprzipnmm-stack-AWSEBAutoScalingScaleUpPolicy-V8
+TPESCKT6KI
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:954d85db-8216-452b-8a18-a81b38ca703a:auto
+ScalingGroupName/awseb-e-2tprzipnmm-stack-AWSEBAutoScalingGroup-7V8ISENTDJKH:policyName/awseb-e-2tprzipnmm-stack-AWSEBAutoScalingScaleDownPolicy-
+ZYBVPJGJWCER
+INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
+WARN: Environment health has transitioned from Info to Severe. Terminate in progress (running for 83 seconds). None of the instances are sending
+data.
+INFO: Removed instance [i-07ef26851009d84e3] from your environment.
+INFO: Deleted Auto Scaling group named: awseb-e-2tprzipnmm-stack-AWSEBAutoScalingGroup-7V8ISENTDJKH
+INFO: Deleted Auto Scaling launch configuration named: awseb-e-2tprzipnmm-stack-AWSEBAutoScalingLaunchConfiguration-RKULYKLVZA4Z
+INFO: Deleted security group named: awseb-e-2tprzipnmm-stack-AWSEBSecurityGroup-16ZM4KD1DDLVH
+INFO: Deleted load balancer named: awseb-e-2-AWSEBLoa-1Q28XC9Z5KCR0
+INFO: Deleting SNS topic for environment django-env.
+INFO: terminateEnvironment completed successfully.
+
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb init
+Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/code
+commit/
+Do you wish to continue with CodeCommit? (y/N) (default is n):
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb create django-env
+WARNING: You have uncommitted changes.
+Creating application version archive "app-354c-171207_122058".
+Uploading: [##################################################] 100% Done...
+Environment details for: django-env
+  Application name: ClinicalTrials_AWS
+  Region: us-west-2
+  Deployed Version: app-354c-171207_122058
+  Environment ID: e-s9g6ingxbx
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.6.0
+  Tier: WebServer-Standard
+  CNAME: UNKNOWN
+  Updated: 2017-12-07 20:22:39.297000+00:00
+Printing Status:
+INFO: createEnvironment is starting.
+INFO: Using elasticbeanstalk-us-west-2-596452634722 as Amazon S3 storage bucket for environment data.
+INFO: Created load balancer named: awseb-e-s-AWSEBLoa-1451CIJQMC9XT
+INFO: Created security group named: awseb-e-s9g6ingxbx-stack-AWSEBSecurityGroup-BCY6W1YLXF1B
+INFO: Environment health has transitioned to Pending. Initialization in progress (running for 32 seconds). There are no instances.
+INFO: Created Auto Scaling launch configuration named: awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingLaunchConfiguration-1HWBW3ZL28YS1
+INFO: Created Auto Scaling group named: awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingGroup-CT4MXBWU2YB4
+INFO: Waiting for EC2 instances to launch. This may take a few minutes.
+INFO: Added instance [i-017fcf87c4ba9fdbe] to your environment.
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:d971cd6d-b81d-4aab-8871-d884472923b2:auto
+ScalingGroupName/awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingGroup-CT4MXBWU2YB4:policyName/awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingScaleUpPolicy-1W
+CFJLXFASU8O
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:596452634722:scalingPolicy:3b6895ab-f32e-4f5d-99f1-811033fbb4e5:auto
+ScalingGroupName/awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingGroup-CT4MXBWU2YB4:policyName/awseb-e-s9g6ingxbx-stack-AWSEBAutoScalingScaleDownPolicy-
+LLL27ZXWJKHD
+INFO: Created CloudWatch alarm named: awseb-e-s9g6ingxbx-stack-AWSEBCloudwatchAlarmHigh-1MIOWZWDVFARJ
+INFO: Created CloudWatch alarm named: awseb-e-s9g6ingxbx-stack-AWSEBCloudwatchAlarmLow-124R3KYXY0R54
+ERROR: Your WSGIPath refers to a file that does not exist.
+INFO: Environment health has transitioned from Pending to Ok. Initialization completed 43 seconds ago and took 3 minutes.
+INFO: Successfully launched environment: django-env
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>eb open
+
+C:\XpressRules\Python\OpenShift\XpressRules Apps\ClinicalTrials_AWS>
